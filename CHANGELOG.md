@@ -25,11 +25,13 @@ The format follows [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/
 
 - Complete public repository for the **Secure Student Records Management Control** project.
 - Production-quality documentation suite covering architecture, security, database, installation, testing, deployment, threat model, and FAQs.
-- GitHub Pages documentation website with interactive role explorer, security diagrams, and long-form technical guides.
-- Mermaid source files and rendered SVG diagrams for architecture, RBAC, MLS, inference control, flow control, encryption, ERD, and role-request lifecycle.
-- Repository metadata: issue templates, pull request template, CI workflow, Dependabot configuration, code owners, citation metadata, support and security policies.
-- Release assets including the SQL Server backup, SQL scripts, and project report.
-- GitHub topics, repository description, homepage, and release notes.
+- Ten-page GitHub Pages documentation website with interactive role explorer, security diagrams, responsive mobile layout, light and dark themes, and long-form technical guides.
+- Dedicated 14-diagram gallery with full-size SVGs, editable Mermaid sources, captions, and implementation limits.
+- Mermaid source files and rendered SVG diagrams for architecture, request lifecycle, authentication, audit, RBAC, MLS, inference control, flow control, encryption, ERD, role workflow, threat model, deployment, and backup/restore.
+- Repository metadata: bug and feature issue forms, pull request template, CI workflow, release workflow, Dependabot configuration, code owners, citation metadata, support and security policies.
+- Static validation suite covering 632 repository, link, HTML, YAML, SVG, manifest, sitemap, and asset checks.
+- Release assets including the SQL Server backup, SQLite database, SQL scripts, and project report.
+- GitHub topics, repository description, homepage, discussions, security alerts, and structured release notes.
 
 ### Changed
 
