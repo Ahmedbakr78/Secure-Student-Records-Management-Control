@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Secure Student Records Management Control</title>
+  <meta name="description" content="A role-aware student information system built around five database-security models: RBAC, Bell–LaPadula MLS, inference control, flow control, and encryption.">
+  <meta name="theme-color" content="#061014">
+  <meta name="color-scheme" content="dark light">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Secure Student Records Management Control">
+  <meta property="og:description" content="Academic records, secured by design. Explore five database-security models in a working Python and SQL Server reference implementation.">
+  <meta property="og:url" content="https://ahmedbakr78.github.io/Secure-Student-Records-Management-Control/">
+  <meta property="og:image" content="https://ahmedbakr78.github.io/Secure-Student-Records-Management-Control/assets/og-image.png">
+  <meta property="og:site_name" content="SRMS">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Secure Student Records Management Control">
+  <meta name="twitter:description" content="Academic records, secured by design. Five database-security models, one inspectable reference implementation.">
+  <meta name="twitter:image" content="https://ahmedbakr78.github.io/Secure-Student-Records-Management-Control/assets/og-image.png">
+  <link rel="canonical" href="https://ahmedbakr78.github.io/Secure-Student-Records-Management-Control/">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="application-name" content="SRMS">
+  <link rel="stylesheet" href="styles.css">
+  <script>try{var t=localStorage.getItem("srms-theme");if(t==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="SRMS home">
+        <img src="assets/brand/logo.svg" alt="" width="38" height="38">
+        <span class="brand-copy">Secure Student Records <small>Management Control</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav-links" id="site-navigation" aria-label="Primary" data-nav-links>
+        <a href="index.html" aria-current="page">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="security.html">Security</a>
+        <a href="database.html">Database</a>
+        <a href="setup.html">Setup</a>
+        <a href="testing.html">Testing</a>
+        <a href="docs.html">Docs</a>
+        <a href="faq.html">FAQ</a>
+        <div class="nav-actions">
+          <button class="icon-button" type="button" aria-label="Switch to light theme" data-theme-toggle>
+            <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 15.4A8.5 8.5 0 0 1 8.6 4a8.5 8.5 0 1 0 11.4 11.4Z"/></svg>
+            <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          </button>
+          <a class="button button-small button-ghost" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.3.8-.6v-2.2c-3.1.7-3.8-1.3-3.8-1.3-.5-1.3-1.3-1.6-1.3-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.3.9.1-.7.4-1.2.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.2.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.1 1.2a10.8 10.8 0 0 1 5.6 0c2.2-1.5 3.1-1.2 3.1-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.6 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Database security, made inspectable</span>
+          <h1>Academic records, <span>secured by design.</span></h1>
+          <p class="hero-lead">SRMS is a role-aware student information system built around five database-security models: RBAC, Bell–LaPadula multilevel security, inference control, flow control, and encryption. A working course project — and an honest reference for what each layer can and cannot guarantee.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="architecture.html">
+              Explore the architecture
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="button" href="docs.html">
+              Read the documentation
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5v-16Z"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20"/></svg>
+            </a>
+          </div>
+          <div class="hero-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Python 3.10+ · Tkinter</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>SQL Server 2022 · SQLite fallback</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>AGPL-3.0 · demo-only</span>
+          </div>
+        </div>
+
+        <div class="console" aria-label="Illustration of the SRMS policy stack">
+          <div class="console-inner">
+            <div class="console-bar">
+              <div class="console-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+              <span class="console-title">security-kernel.policy</span>
+            </div>
+            <div class="console-body">
+              <div class="status-line">
+                <strong>Defence in depth</strong>
+                <span class="status">Five layers</span>
+              </div>
+              <div class="layer-list">
+                <div class="layer">
+                  <span class="layer-num">01</span>
+                  <div><strong>Identity &amp; session</strong><small>Authentication · lockout · audit</small></div>
+                  <svg class="layer-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+                </div>
+                <div class="layer">
+                  <span class="layer-num">02</span>
+                  <div><strong>Role-based access</strong><small>Role × table × row ownership</small></div>
+                  <svg class="layer-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+                </div>
+                <div class="layer">
+                  <span class="layer-num">03</span>
+                  <div><strong>Multilevel security</strong><small>No read up · no write down</small></div>
+                  <svg class="layer-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+                </div>
+                <div class="layer">
+                  <span class="layer-num">04</span>
+                  <div><strong>Inference control</strong><small>Query-set and tracker checks</small></div>
+                  <svg class="layer-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+                </div>
+                <div class="layer">
+                  <span class="layer-num">05</span>
+                  <div><strong>Flow &amp; cryptography</strong><small>Export policy · encryption at rest</small></div>
+                  <svg class="layer-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+                </div>
+              </div>
+              <div class="console-foot">
+                <div class="mini-stat"><span>Roles</span><strong>05</strong></div>
+                <div class="mini-stat"><span>SQL Server tables</span><strong>11</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="container">
+        <span>Built around</span>
+        <span>Least privilege</span>
+        <span>Need-to-know</span>
+        <span>Auditability</span>
+        <span>Explainable denial</span>
+        <span>Local reproducibility</span>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container split split-wide">
+        <div class="reveal">
+          <span class="kicker">The problem</span>
+          <h2>Hiding a menu is not access control.</h2>
+          <p>A conventional CRUD interface can authenticate a person and remove a button, yet still leave the underlying records exposed to a different query, a small aggregate, or an export path. SRMS treats those as security decisions that must be made explicitly.</p>
+          <p>The project asks five review questions and keeps the answer close to the code: role and row ownership, read/write clearance, aggregate disclosure, data movement, and protection at rest.</p>
+          <div class="callout">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="M12 8v4M12 16h.01"/></svg>
+            <p><strong>Course project, not production software.</strong>The code paths are real, but the deployment ships public demo credentials, an <code>SA</code> connection path, and no automated security regression suite. The limitations are documented rather than hidden.</p>
+          </div>
+        </div>
+        <div class="card reveal">
+          <span class="card-number">REVIEW MODEL</span>
+          <h3>Five decisions, one request</h3>
+          <ul class="check-list">
+            <li>May this role perform this operation?</li>
+            <li>Does clearance allow this direction?</li>
+            <li>Does the result set expose an individual?</li>
+            <li>May this data move to that context?</li>
+            <li>Can the action and outcome be audited?</li>
+          </ul>
+          <a class="card-link" href="security.html">See how the controls compose
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Defence in depth</span>
+          <h2>Five security models, mapped to code.</h2>
+          <p>Each layer answers a different question. Together they cover authorization, classification, aggregate inference, exfiltration actions, and data-at-rest protection.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card card-accent reveal">
+            <span class="card-number">MODEL 01</span>
+            <h3>Role-based access control</h3>
+            <p>Five roles, an explicit permission matrix, own-row checks, SQL Server role mirrors, and assignment-scoped access.</p>
+            <div class="tag-row"><span class="tag">RBAC</span><span class="tag">least privilege</span><span class="tag">deny by default</span></div>
+          </article>
+          <article class="card card-accent reveal">
+            <span class="card-number">MODEL 02</span>
+            <h3>Bell–LaPadula MLS</h3>
+            <p>Five classifications from Public to Top Secret, with no-read-up and no-write-down checks plus an explicit trusted-admin policy.</p>
+            <div class="tag-row"><span class="tag">NRU</span><span class="tag">NWD</span><span class="tag">clearance</span></div>
+          </article>
+          <article class="card card-accent reveal">
+            <span class="card-number">MODEL 03</span>
+            <h3>Inference control</h3>
+            <p>A minimum query-set size, stricter MIN/MAX threshold, tracker-attack history, and role-aware column redaction.</p>
+            <div class="tag-row"><span class="tag">aggregates</span><span class="tag">tracker</span><span class="tag">redaction</span></div>
+          </article>
+          <article class="card card-accent reveal">
+            <span class="card-number">MODEL 04</span>
+            <h3>Flow control</h3>
+            <p>Directional flow checks stop down-classification, while an action policy guards export, print, copy, save, and clipboard use.</p>
+            <div class="tag-row"><span class="tag">exfiltration</span><span class="tag">clipboard</span><span class="tag">export policy</span></div>
+          </article>
+          <article class="card card-accent reveal">
+            <span class="card-number">MODEL 05</span>
+            <h3>Encryption</h3>
+            <p>SQL Server certificate and AES-256 key hierarchy, application-level Fernet encryption, and password hashing with per-user salts.</p>
+            <div class="tag-row"><span class="tag">AES-256</span><span class="tag">Fernet</span><span class="tag">salting</span></div>
+          </article>
+          <article class="card card-accent reveal">
+            <span class="card-number">CROSS-CUTTING</span>
+            <h3>Audit and role workflow</h3>
+            <p>Login, access, write, and workflow events are recorded. Privilege changes follow a submit-review-approve path instead of an ungoverned role edit.</p>
+            <div class="tag-row"><span class="tag">audit log</span><span class="tag">role request</span><span class="tag">review</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Role boundaries</span>
+          <h2>Access follows the role — and the row.</h2>
+          <p>Clearance is only one input. Assignment, ownership, and publication filters determine which records a role can actually reach.</p>
+        </div>
+
+        <div class="role-explorer" data-tabs>
+          <div class="role-tabs" role="tablist" aria-label="Demo roles">
+            <button class="role-tab" id="tab-admin" type="button" role="tab" aria-selected="true" aria-controls="panel-admin" tabindex="0">
+              <span class="clearance">L4</span><span><strong>Admin</strong><small>Top Secret</small></span>
+            </button>
+            <button class="role-tab" id="tab-instructor" type="button" role="tab" aria-selected="false" aria-controls="panel-instructor" tabindex="-1">
+              <span class="clearance">L3</span><span><strong>Instructor</strong><small>Secret</small></span>
+            </button>
+            <button class="role-tab" id="tab-ta" type="button" role="tab" aria-selected="false" aria-controls="panel-ta" tabindex="-1">
+              <span class="clearance">L2</span><span><strong>TA</strong><small>Confidential</small></span>
+            </button>
+            <button class="role-tab" id="tab-student" type="button" role="tab" aria-selected="false" aria-controls="panel-student" tabindex="-1">
+              <span class="clearance">L1</span><span><strong>Student</strong><small>Unclassified</small></span>
+            </button>
+            <button class="role-tab" id="tab-guest" type="button" role="tab" aria-selected="false" aria-controls="panel-guest" tabindex="-1">
+              <span class="clearance">L0</span><span><strong>Guest</strong><small>Public</small></span>
+            </button>
+          </div>
+
+          <div class="role-panel" id="panel-admin" role="tabpanel" aria-labelledby="tab-admin">
+            <div class="role-panel-head"><h3>Admin</h3><span class="badge badge-mint">Clearance 4 · Top Secret</span></div>
+            <p>Full security and records administration. The role is trusted for MLS write-down by an explicit policy exception, not by accident.</p>
+            <ul class="permission-list">
+              <li><strong>Records</strong>CRUD across student, instructor, course, grade, attendance, and user tables.</li>
+              <li><strong>Governance</strong>Review, approve, or deny role requests; inspect the audit log.</li>
+              <li><strong>Security</strong>See all classification levels and security-model status.</li>
+              <li><strong>Flow</strong>Top Secret copy and export actions remain blocked by the action policy.</li>
+            </ul>
+          </div>
+
+          <div class="role-panel" id="panel-instructor" role="tabpanel" aria-labelledby="tab-instructor" hidden>
+            <div class="role-panel-head"><h3>Instructor</h3><span class="badge badge-mint">Clearance 3 · Secret</span></div>
+            <p>Academic decisions within assigned courses. Profile access is read-only; grade writes require course ownership.</p>
+            <ul class="permission-list">
+              <li><strong>Grades</strong>Read, insert, and update for assigned courses; delete is denied.</li>
+              <li><strong>Students</strong>Read students associated with assigned courses.</li>
+              <li><strong>Attendance</strong>Read assigned-course attendance; writes belong to the TA delegation.</li>
+              <li><strong>Requests</strong>Submit and view own role requests.</li>
+            </ul>
+          </div>
+
+          <div class="role-panel" id="panel-ta" role="tabpanel" aria-labelledby="tab-ta" hidden>
+            <div class="role-panel-head"><h3>Teaching Assistant</h3><span class="badge badge-amber">Clearance 2 · Confidential</span></div>
+            <p>A deliberately narrow delegation: attendance for assigned courses, and no grade access in either the application matrix or SQL Server role.</p>
+            <ul class="permission-list">
+              <li><strong>Attendance</strong>Read, insert, and update assigned-course rows; delete is denied.</li>
+              <li><strong>Students</strong>Read assigned students only.</li>
+              <li><strong>Grades</strong>No access.</li>
+              <li><strong>Requests</strong>Submit and view own role requests.</li>
+            </ul>
+          </div>
+
+          <div class="role-panel" id="panel-student" role="tabpanel" aria-labelledby="tab-student" hidden>
+            <div class="role-panel-head"><h3>Student</h3><span class="badge">Clearance 1 · Unclassified</span></div>
+            <p>Own-record access through dedicated views. The own-profile exception is an explicit ownership policy on top of a Confidential classification.</p>
+            <ul class="permission-list">
+              <li><strong>Profile</strong>Read own linked profile through <code>vw_StudentOwnProfile</code>.</li>
+              <li><strong>Grades</strong>Read own published grades only; encrypted values are not exposed.</li>
+              <li><strong>Attendance</strong>Read own attendance rows.</li>
+              <li><strong>Requests</strong>Submit and track a TA or Instructor role request.</li>
+            </ul>
+          </div>
+
+          <div class="role-panel" id="panel-guest" role="tabpanel" aria-labelledby="tab-guest" hidden>
+            <div class="role-panel-head"><h3>Guest</h3><span class="badge">Clearance 0 · Public</span></div>
+            <p>Public course discovery only. Guest entry is a role, not an anonymous bypass of the database policy.</p>
+            <ul class="permission-list">
+              <li><strong>Courses</strong>Read the public course projection only.</li>
+              <li><strong>Students</strong>No access.</li>
+              <li><strong>Grades</strong>No access.</li>
+              <li><strong>Requests</strong>Cannot submit a role request.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout callout-warning">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
+          <p><strong>A documented policy conflict, not a hidden bypass.</strong>Attendance is classified Secret while the TA clearance is Confidential. Assignment-scoped views express the delegated duty, but a pure MLS check would deny it. The project records this tension for an explicit future policy decision.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-head section-head-split">
+          <div>
+            <span class="kicker">Evidence over assertion</span>
+            <h2>Built to be reviewed.</h2>
+            <p>Seventeen guides connect policy to code, tests, and known limitations. Diagrams make the architecture inspectable without reading the entire application first.</p>
+          </div>
+          <a class="button button-ghost" href="docs.html">Browse all guides
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="stat-strip reveal">
+          <div class="stat"><strong>11</strong><span>SQL Server core tables</span></div>
+          <div class="stat"><strong>11</strong><span>Secure views</span></div>
+          <div class="stat"><strong>14</strong><span>Canonical procedures</span></div>
+          <div class="stat"><strong>14</strong><span>Rendered diagrams</span></div>
+        </div>
+
+        <div class="grid grid-3" style="margin-top:1rem">
+          <article class="card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+            </div>
+            <h3>Read the model</h3>
+            <p>Start with the overview, architecture, and the five security models. Each guide states the expected outcome and the residual risk.</p>
+            <a class="card-link" href="security.html">Security models
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+            </div>
+            <h3>Inspect the schema</h3>
+            <p>Eleven core tables, eleven restricted views, fourteen procedures, five database roles, and a demo backup with a SQLite fallback.</p>
+            <a class="card-link" href="database.html">Database reference
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <h3>Run the tests</h3>
+            <p>A manual security matrix covers RBAC, MLS, inference, flow, encryption, authentication, and the role workflow with expected results.</p>
+            <a class="card-link" href="testing.html">Test matrix
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <span class="kicker">Start with the map</span>
+          <h2>See how a request moves through every layer.</h2>
+          <p>Follow a student grade request from the Tkinter client through authentication, RBAC, MLS, inference, flow, cryptography, and the audit trail.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="architecture.html">Architecture overview
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="button button-ghost" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control" target="_blank" rel="noopener">View source on GitHub
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="SRMS home">
+            <img src="assets/brand/logo.svg" alt="" width="38" height="38">
+            <span class="brand-copy">Secure Student Records <small>Management Control</small></span>
+          </a>
+          <p>A database-security reference implementation for academic records. Designed for inspection, demonstration, and honest discussion of residual risk.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Explore</h3>
+          <a href="architecture.html">Architecture</a>
+          <a href="security.html">Security models</a>
+          <a href="database.html">Database</a>
+          <a href="testing.html">Test matrix</a>
+        </div>
+        <div class="footer-col">
+          <h3>Documentation</h3>
+          <a href="docs.html">Guide index</a>
+          <a href="diagrams.html">Diagram gallery</a>
+          <a href="setup.html">Installation</a>
+          <a href="assets/report/d_ds.pdf">Original report</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h3>Project</h3>
+          <a href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control" target="_blank" rel="noopener">Source code</a>
+          <a href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/releases" target="_blank" rel="noopener">Releases</a>
+          <a href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 license</a>
+          <a href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/SECURITY.md" target="_blank" rel="noopener">Security policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Ahmed Abo Bakr · AGPL-3.0</span>
+        <span>Course project. Public demo data. Not production-ready.</span>
+        <a class="to-top" href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

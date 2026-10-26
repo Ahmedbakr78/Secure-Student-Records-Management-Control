@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diagram gallery · Secure Student Records Management Control</title>
+  <meta name="description" content="Fourteen rendered diagrams covering architecture, request flow, authentication, audit, RBAC, MLS, inference, flow control, encryption, data relationships, workflows, threats, deployment, and recovery.">
+  <meta name="theme-color" content="#061014">
+  <meta name="color-scheme" content="dark light">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Diagram gallery · Secure Student Records Management Control">
+  <meta property="og:description" content="Fourteen rendered diagrams covering architecture, request flow, authentication, audit, RBAC, MLS, inference, flow control, encryption, data relationships, workflows, threats, deployment, and recovery.">
+  <meta property="og:url" content="https://ahmedbakr78.github.io/Secure-Student-Records-Management-Control/diagrams.html">
+  <meta property="og:image" content="https://ahmedbakr78.github.io/Secure-Student-Records-Management-Control/assets/og-image.png">
+  <meta property="og:site_name" content="SRMS">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Diagram gallery · Secure Student Records Management Control">
+  <meta name="twitter:description" content="Fourteen rendered diagrams covering architecture, request flow, authentication, audit, RBAC, MLS, inference, flow control, encryption, data relationships, workflows, threats, deployment, and recovery.">
+  <meta name="twitter:image" content="https://ahmedbakr78.github.io/Secure-Student-Records-Management-Control/assets/og-image.png">
+  <link rel="canonical" href="https://ahmedbakr78.github.io/Secure-Student-Records-Management-Control/diagrams.html">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="application-name" content="SRMS">
+  <link rel="stylesheet" href="styles.css">
+  <script>try{var t=localStorage.getItem("srms-theme");if(t==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="SRMS home">
+        <img src="assets/brand/logo.svg" alt="" width="38" height="38">
+        <span class="brand-copy">Secure Student Records <small>Management Control</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav-links" id="site-navigation" aria-label="Primary" data-nav-links>
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="security.html">Security</a>
+        <a href="database.html">Database</a>
+        <a href="setup.html">Setup</a>
+        <a href="testing.html">Testing</a>
+        <a href="docs.html">Docs</a>
+        <a href="faq.html">FAQ</a>
+        <div class="nav-actions">
+          <button class="icon-button" type="button" aria-label="Switch to light theme" data-theme-toggle>
+            <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 15.4A8.5 8.5 0 0 1 8.6 4a8.5 8.5 0 1 0 11.4 11.4Z"/></svg>
+            <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          </button>
+          <a class="button button-small button-ghost" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.3.8-.6v-2.2c-3.1.7-3.8-1.3-3.8-1.3-.5-1.3-1.3-1.6-1.3-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.3.9.1-.7.4-1.2.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.2.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.1 1.2a10.8 10.8 0 0 1 5.6 0c2.2-1.5 3.1-1.2 3.1-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.6 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span class="breadcrumb-sep">/</span><span>Diagrams</span>
+        </nav>
+        <span class="kicker">Visual system guide</span>
+        <h1>Fourteen diagrams. One system story.</h1>
+        <p>Each diagram isolates a decision, boundary, or operational path. Read them together to connect the visual model to the Python and SQL code that actually runs.</p>
+        <div class="page-meta">
+          <span class="badge badge-mint">14 rendered SVGs</span>
+          <span class="badge">Mermaid sources</span>
+          <span class="badge">Policy to code</span>
+          <span class="badge badge-amber">Known limits included</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">How to read the gallery</span>
+          <h2>Start with the whole system, then inspect one boundary at a time.</h2>
+          <p>The diagrams are explanatory models, not proof of security. Each one names the implemented path and, where relevant, the residual risk that the code does not remove.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card card-accent reveal">
+            <span class="card-number">ROUTE 01</span>
+            <h3>Follow a request</h3>
+            <p>Begin with the architecture and request lifecycle, then continue through authentication, authorization, inference, flow, and audit.</p>
+          </article>
+          <article class="card card-accent reveal">
+            <span class="card-number">ROUTE 02</span>
+            <h3>Inspect the data</h3>
+            <p>Use the ERD, encryption hierarchy, and backup path to understand what is stored, how it is protected, and how it is restored.</p>
+          </article>
+          <article class="card card-accent reveal">
+            <span class="card-number">ROUTE 03</span>
+            <h3>Challenge the claims</h3>
+            <p>Finish with the threat model and documented conflicts, then verify each control against the test matrix and source.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Gallery index</span>
+          <h2>Jump to a diagram.</h2>
+          <p>Every rendered SVG is paired with its editable Mermaid source in <code>documentation/diagrams/</code>.</p>
+        </div>
+        <div class="grid grid-3">
+          <a class="card card-link-card" href="#architecture"><span class="card-number">01 · SYSTEM</span><h3>Layered architecture</h3><p>Presentation, security kernel, data access, storage, and audit.</p></a>
+          <a class="card card-link-card" href="#request-lifecycle"><span class="card-number">02 · REQUEST</span><h3>Request lifecycle</h3><p>One protected read through every application control.</p></a>
+          <a class="card card-link-card" href="#authentication"><span class="card-number">03 · IDENTITY</span><h3>Authentication path</h3><p>Credential checks, lockout, session, and role routing.</p></a>
+          <a class="card card-link-card" href="#audit"><span class="card-number">04 · EVIDENCE</span><h3>Audit pipeline</h3><p>Allow and deny outcomes turned into reviewable events.</p></a>
+          <a class="card card-link-card" href="#rbac"><span class="card-number">05 · RBAC</span><h3>Authorization decision</h3><p>Deny-by-default, own-row scope, and explicit denials.</p></a>
+          <a class="card card-link-card" href="#mls"><span class="card-number">06 · MLS</span><h3>Bell–LaPadula lattice</h3><p>Clearance, classification, no-read-up, and no-write-down.</p></a>
+          <a class="card card-link-card" href="#inference"><span class="card-number">07 · AGGREGATES</span><h3>Inference controls</h3><p>Query-set thresholds, MIN/MAX rules, and tracker history.</p></a>
+          <a class="card card-link-card" href="#flow"><span class="card-number">08 · FLOW</span><h3>Flow-control policy</h3><p>Upflow, same-level movement, blocked downflow, and actions.</p></a>
+          <a class="card card-link-card" href="#encryption"><span class="card-number">09 · CRYPTO</span><h3>Encryption paths</h3><p>SQL Server key hierarchy and application encryption.</p></a>
+          <a class="card card-link-card" href="#erd"><span class="card-number">10 · DATA</span><h3>Entity relationships</h3><p>Eleven core tables and their intentional links.</p></a>
+          <a class="card card-link-card" href="#role-workflow"><span class="card-number">11 · WORKFLOW</span><h3>Role upgrade</h3><p>Request, review, decision, update, and audit.</p></a>
+          <a class="card card-link-card" href="#threat-model"><span class="card-number">12 · THREATS</span><h3>Threat model</h3><p>Actors, boundaries, threats, mitigations, and residual risk.</p></a>
+          <a class="card card-link-card" href="#deployment"><span class="card-number">13 · RUNTIME</span><h3>Deployment topology</h3><p>Desktop client, Docker SQL Server, viewer, and Pages.</p></a>
+          <a class="card card-link-card" href="#backup-restore"><span class="card-number">14 · RECOVERY</span><h3>Backup and restore</h3><p>The local recovery path and its operational cautions.</p></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <article class="diagram-entry" id="architecture">
+          <div class="diagram-entry-head">
+            <span class="kicker">01 · System map</span>
+            <h2>Layered architecture</h2>
+            <p>The client never calls the database with an unchecked request. Dashboards enter the application security kernel, the kernel produces decisions, secure models prepare the operation, and the connection factory selects SQL Server or SQLite. The Flask viewer is deliberately read-only and outside the desktop role-routing path.</p>
+          </div>
+          <figure>
+            <div class="diagram-frame">
+              <img src="assets/diagrams/architecture.svg" alt="Layered architecture diagram from presentation dashboards through the security kernel, data access, and SQL Server or SQLite storage." loading="lazy" decoding="async">
+            </div>
+            <figcaption class="diagram-caption">Rendered from <a class="diagram-link" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/documentation/diagrams/architecture.mmd" target="_blank" rel="noopener">architecture.mmd</a> · <a class="diagram-link" href="assets/diagrams/architecture.svg" target="_blank" rel="noopener">Open full-size SVG</a></figcaption>
+          </figure>
+          <div class="grid grid-3">
+            <div class="card"><h3>Layers are review seams</h3><p>Each arrow is a place to ask what input is trusted, what has already been checked, and what gets logged.</p></div>
+            <div class="card"><h3>The database is not the only boundary</h3><p>Application checks and SQL Server roles are separate definitions that must be reviewed together.</p></div>
+            <div class="card"><h3>Backends are not equivalent</h3><p>SQLite preserves behaviour for development and demonstration, not the full SQL Server isolation model.</p></div>
+          </div>
+        </article>
+
+        <article class="diagram-entry" id="request-lifecycle">
+          <div class="diagram-entry-head">
+            <span class="kicker">02 · Request path</span>
+            <h2>One protected read, seven checkpoints</h2>
+            <p>A grade request is not a single authorization call. The path combines identity, role permission, clearance, aggregate inference, action flow, parameterised data access, and an audit outcome. A failure at any checkpoint should end in a structured denial rather than a partially completed operation.</p>
+          </div>
+          <figure>
+            <div class="diagram-frame">
+              <img src="assets/diagrams/request-lifecycle.svg" alt="Sequence diagram showing sign-in, RBAC, MLS, inference, flow control, database access, audit, and a returned projection or denial." loading="lazy" decoding="async">
+            </div>
+            <figcaption class="diagram-caption">Rendered from <a class="diagram-link" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/documentation/diagrams/request-lifecycle.mmd" target="_blank" rel="noopener">request-lifecycle.mmd</a> · <a class="diagram-link" href="assets/diagrams/request-lifecycle.svg" target="_blank" rel="noopener">Open full-size SVG</a></figcaption>
+          </figure>
+          <div class="grid grid-3">
+            <div class="card"><h3>Deny early</h3><p>A denied request should not reach data access, and the denial reason should remain understandable to the user.</p></div>
+            <div class="card"><h3>Control order matters</h3><p>RBAC answers “may this role act?”, MLS answers “at which level?”, and flow answers “where may the result go?”</p></div>
+            <div class="card"><h3>Audit both outcomes</h3><p>Allowed operations and denials are both evidence. Review needs the attempted action, not only successful writes.</p></div>
+          </div>
+        </article>
+
+        <article class="diagram-entry" id="authentication">
+          <div class="diagram-entry-head">
+            <span class="kicker">03 · Identity</span>
+            <h2>Authentication before least privilege</h2>
+            <p>The login flow loads account state, verifies the stored password representation, tracks failed attempts, and creates a session before the role router selects a dashboard. Generic denial messages avoid confirming whether a username exists. The published classroom credentials and simulated second factor remain demo constraints, not production identity design.</p>
+          </div>
+          <figure>
+            <div class="diagram-frame">
+              <img src="assets/diagrams/authentication.svg" alt="Authentication sequence diagram covering account state, password verification, failed attempts, session creation, audit, and role routing." loading="lazy" decoding="async">
+            </div>
+            <figcaption class="diagram-caption">Rendered from <a class="diagram-link" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/documentation/diagrams/authentication.mmd" target="_blank" rel="noopener">authentication.mmd</a> · <a class="diagram-link" href="assets/diagrams/authentication.svg" target="_blank" rel="noopener">Open full-size SVG</a></figcaption>
+          </figure>
+          <div class="grid grid-3">
+            <div class="card"><h3>Account state is checked first</h3><p>Inactive and locked accounts must not reach password verification or dashboard routing.</p></div>
+            <div class="card"><h3>Failures produce evidence</h3><p>Failed attempts, lockout transitions, and successful logins belong in the audit trail.</p></div>
+            <div class="card"><h3>Identity is not authorization</h3><p>A valid session still depends on role, clearance, ownership, assignment, and action checks.</p></div>
+          </div>
+        </article>
+
+        <article class="diagram-entry" id="audit">
+          <div class="diagram-entry-head">
+            <span class="kicker">04 · Evidence</span>
+            <h2>From decision to reviewable audit event</h2>
+            <p>Audit is cross-cutting. Authentication results, protected reads, writes, exports, and role-request decisions all produce context about the actor, target, action, outcome, and time. The admin view turns those rows into an investigation surface. The table is mutable, so the audit trail is detective evidence rather than tamper-proof proof.</p>
+          </div>
+          <figure>
+            <div class="diagram-frame">
+              <img src="assets/diagrams/audit.svg" alt="Audit pipeline diagram showing protected actions, allow or deny outcomes, redaction, audit log writes, review, and residual retention risk." loading="lazy" decoding="async">
+            </div>
+            <figcaption class="diagram-caption">Rendered from <a class="diagram-link" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/documentation/diagrams/audit.mmd" target="_blank" rel="noopener">audit.mmd</a> · <a class="diagram-link" href="assets/diagrams/audit.svg" target="_blank" rel="noopener">Open full-size SVG</a></figcaption>
+          </figure>
+          <div class="grid grid-3">
+            <div class="card"><h3>Record the attempt</h3><p>A blocked action is security-relevant even when no data changed.</p></div>
+            <div class="card"><h3>Do not log secrets</h3><p>Passwords, keys, and unnecessary personal data must be excluded or redacted before persistence.</p></div>
+            <div class="card"><h3>Protect the evidence</h3><p>Append-only storage, retention, integrity checks, and restricted review are roadmap work.</p></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Authorization and confidentiality</span>
+          <h2>Five controls, five different questions.</h2>
+          <p>Role permission, clearance, aggregate disclosure, data movement, and encryption are deliberately separate. Collapsing them into one check would hide which policy actually failed.</p>
+        </div>
+
+        <article class="diagram-entry" id="rbac">
+          <div class="diagram-entry-head">
+            <span class="kicker">05 · RBAC</span>
+            <h2>Deny by default, then scope the row</h2>
+            <p>The matrix grants operations to roles, but the decision path also considers explicit denials, own-row operations, and public projections. An Instructor can read assigned students; a Student can read only their own published grades; the TA role is denied grade access even where attendance duties overlap.</p>
+          </div>
+          <figure>
+            <div class="diagram-frame">
+              <img src="assets/diagrams/rbac.svg" alt="RBAC decision flowchart showing role request, explicit denial, direct grant, own-row check, public projection, and allow or block outcomes." loading="lazy" decoding="async">
+            </div>
+            <figcaption class="diagram-caption">Rendered from <a class="diagram-link" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/documentation/diagrams/rbac.mmd" target="_blank" rel="noopener">rbac.mmd</a> · <a class="diagram-link" href="assets/diagrams/rbac.svg" target="_blank" rel="noopener">Open full-size SVG</a></figcaption>
+          </figure>
+          <div class="grid grid-3">
+            <div class="card"><h3>Explicit denial wins</h3><p>TA grade denial is intentional and should not be relaxed for convenience.</p></div>
+            <div class="card"><h3>Ownership is not a role</h3><p>The same Student role sees only the linked student record, not all Student rows.</p></div>
+            <div class="card"><h3>Assignment scopes access</h3><p>Instructor and TA views depend on course assignment, not only on table permission.</p></div>
+          </div>
+        </article>
+
+        <article class="diagram-entry" id="mls">
+          <div class="diagram-entry-head">
+            <span class="kicker">06 · MLS</span>
+            <h2>The Bell–LaPadula lattice</h2>
+            <p>Clearance and classification are ordered from Public to Top Secret. No Read Up prevents lower-clearance subjects from reading higher objects. No Write Down prevents a subject from moving higher-classification data into a lower level. The TA attendance case is the documented conflict: attendance is Secret while the TA clearance is Confidential, so delegated views express the duty rather than pretending the pure lattice allows it.</p>
+          </div>
+          <figure>
+            <div class="diagram-frame">
+              <img src="assets/diagrams/mls.svg" alt="Bell-LaPadula lattice showing Public through Top Secret, allowed reads and writes, denied read-up and write-down paths, and the TA conflict." loading="lazy" decoding="async">
+            </div>
+            <figcaption class="diagram-caption">Rendered from <a class="diagram-link" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/documentation/diagrams/mls.mmd" target="_blank" rel="noopener">mls.mmd</a> · <a class="diagram-link" href="assets/diagrams/mls.svg" target="_blank" rel="noopener">Open full-size SVG</a></figcaption>
+          </figure>
+          <div class="grid grid-3">
+            <div class="card"><h3>No Read Up</h3><p>A lower clearance must not receive higher-classification data, regardless of role convenience.</p></div>
+            <div class="card"><h3>No Write Down</h3><p>Readable higher-level data must not be copied into a lower-classification object.</p></div>
+            <div class="card"><h3>Exceptions must be explicit</h3><p>Admin write and TA attendance handling are named design decisions, not invisible bypasses.</p></div>
+          </div>
+        </article>
+
+        <article class="diagram-entry" id="inference">
+          <div class="diagram-entry-head">
+            <span class="kicker">07 · Inference</span>
+            <h2>Aggregates can reveal an individual</h2>
+            <p>Small result sets, MIN/MAX extremes, and complementary queries can disclose a value that no single query returned. SRMS applies a minimum result-set size of three, a stricter minimum of six for MIN/MAX, and tracker history for query pairs that differ by one record. The tracker is a process-local heuristic, not a proof of intent or a complete statistical-disclosure control.</p>
+          </div>
+          <figure>
+            <div class="diagram-frame">
+              <img src="assets/diagrams/inference.svg" alt="Inference-control flowchart showing query-set size thresholds, MIN and MAX restrictions, and tracker history outcomes." loading="lazy" decoding="async">
+            </div>
+            <figcaption class="diagram-caption">Rendered from <a class="diagram-link" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/documentation/diagrams/inference.mmd" target="_blank" rel="noopener">inference.mmd</a> · <a class="diagram-link" href="assets/diagrams/inference.svg" target="_blank" rel="noopener">Open full-size SVG</a></figcaption>
+          </figure>
+          <div class="grid grid-3">
+            <div class="card"><h3>Zero rows are safe</h3><p>An empty aggregate returns no individual value and is allowed by the size rule.</p></div>
+            <div class="card"><h3>Small sets are blocked</h3><p>One or two rows fail the minimum size of three before aggregation is returned.</p></div>
+            <div class="card"><h3>History is stateful</h3><p>Tracker results are not shared across processes or mirrored in SQL Server.</p></div>
+          </div>
+        </article>
+
+        <article class="diagram-entry" id="flow">
+          <div class="diagram-entry-head">
+            <span class="kicker">08 · Flow</span>
+            <h2>Classification follows the data</h2>
+            <p>Flow control asks where a result may go after it is read. Upward and same-level movement is permitted; downflow is blocked. The action policy then restricts export, print, copy, save, and screenshot at different levels. These checks reduce accidental disclosure, but the client cannot prevent every out-of-band capture.</p>
+          </div>
+          <figure>
+            <div class="diagram-frame">
+              <img src="assets/diagrams/flow.svg" alt="Flow-control diagram with Public through Top Secret levels, permitted upflow, blocked downflow, and action restrictions for export, print, copy, save, and screenshots." loading="lazy" decoding="async">
+            </div>
+            <figcaption class="diagram-caption">Rendered from <a class="diagram-link" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/documentation/diagrams/flow.mmd" target="_blank" rel="noopener">flow.mmd</a> · <a class="diagram-link" href="assets/diagrams/flow.svg" target="_blank" rel="noopener">Open full-size SVG</a></figcaption>
+          </figure>
+          <div class="grid grid-3">
+            <div class="card"><h3>Direction is explicit</h3><p>Reading data does not grant unlimited movement; the target level determines whether the flow is allowed.</p></div>
+            <div class="card"><h3>Actions have levels</h3><p>Export, print, copy, save, and screenshot are separate operations with different thresholds.</p></div>
+            <div class="card"><h3>Client-side limits remain</h3><p>A screenshot tool outside the application can bypass in-app action blocks.</p></div>
+          </div>
+        </article>
+
+        <article class="diagram-entry" id="encryption">
+          <div class="diagram-entry-head">
+            <span class="kicker">09 · Cryptography</span>
+            <h2>Two encryption paths, one documented gap</h2>
+            <p>SQL Server protects selected columns through a database master key, certificate, and AES-256 symmetric key. The application layer uses PBKDF2-HMAC-SHA256 to derive a Fernet key, and Fernet provides authenticated encryption. Password storage differs by path: bcrypt on the SQLite/model path and SHA-256 with per-user salt in the SQL Server seed path. The two key lifecycles are not unified.</p>
+          </div>
+          <figure>
+            <div class="diagram-frame">
+              <img src="assets/diagrams/encryption.svg" alt="Encryption diagram showing SQL Server master key, certificate, AES-256 symmetric key, encrypted columns, and application PBKDF2, Fernet, bcrypt, and salted SHA-256 paths." loading="lazy" decoding="async">
+            </div>
+            <figcaption class="diagram-caption">Rendered from <a class="diagram-link" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/documentation/diagrams/encryption.mmd" target="_blank" rel="noopener">encryption.mmd</a> · <a class="diagram-link" href="assets/diagrams/encryption.svg" target="_blank" rel="noopener">Open full-size SVG</a></figcaption>
+          </figure>
+          <div class="grid grid-3">
+            <div class="card"><h3>Fernet is not AES-256</h3><p>The standard construction uses AES-128-CBC with HMAC-SHA256; “AES-256” describes the SQL Server key, not Fernet.</p></div>
+            <div class="card"><h3>The fallback key is public</h3><p>Set <code>SRMS_MASTER_KEY</code> for any local data that matters. Never protect real records with the demo fallback.</p></div>
+            <div class="card"><h3>Rotation is missing</h3><p>Key rotation, envelope encryption, and a single lifecycle are roadmap items, not current features.</p></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Data and workflow</span>
+          <h2>Records, relationships, and governed change.</h2>
+          <p>The data model and role-request workflow show how records connect and how privilege changes are requested, reviewed, and recorded.</p>
+        </div>
+
+        <article class="diagram-entry" id="erd">
+          <div class="diagram-entry-head">
+            <span class="kicker">10 · Data model</span>
+            <h2>Eleven tables, deliberate relationships</h2>
+            <p>The ERD links users to optional student or instructor records, courses to assignments and enrollments, and students to grades and attendance. Audit rows record acting users. The model keeps identity, academic records, workflow, and evidence separate enough to review each boundary.</p>
+          </div>
+          <figure>
+            <div class="diagram-frame">
+              <img src="assets/diagrams/erd.svg" alt="Entity relationship diagram for users, students, instructors, courses, grades, attendance, enrollments, assignments, role requests, and audit logs." loading="lazy" decoding="async">
+            </div>
+            <figcaption class="diagram-caption">Rendered from <a class="diagram-link" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/documentation/diagrams/erd.mmd" target="_blank" rel="noopener">erd.mmd</a> · <a class="diagram-link" href="assets/diagrams/erd.svg" target="_blank" rel="noopener">Open full-size SVG</a></figcaption>
+          </figure>
+          <div class="grid grid-3">
+            <div class="card"><h3>Identity is shared</h3><p>USERS carries authentication state, role, clearance, and an optional link to a student or instructor record.</p></div>
+            <div class="card"><h3>Assignments drive scope</h3><p>Course assignment and enrollment tables explain how row-level access is narrowed beyond the role matrix.</p></div>
+            <div class="card"><h3>Evidence is a table</h3><p>AUDIT_LOG references acting users, but it remains mutable and outside an append-only guarantee.</p></div>
+          </div>
+        </article>
+
+        <article class="diagram-entry" id="role-workflow">
+          <div class="diagram-entry-head">
+            <span class="kicker">11 · Workflow</span>
+            <h2>Privilege changes leave a trace</h2>
+            <p>A student or TA submits a role request with a reason. The model validates the transition and records a Pending request. An admin reviews the context, approves or denies with comments, and updates the user role and clearance when approved. The final decision is audited, and the requester can refresh to see the outcome.</p>
+          </div>
+          <figure>
+            <div class="diagram-frame">
+              <img src="assets/diagrams/role-workflow.svg" alt="Sequence diagram for a role-upgrade request from submission through validation, admin approval or denial, user update, and audit." loading="lazy" decoding="async">
+            </div>
+            <figcaption class="diagram-caption">Rendered from <a class="diagram-link" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/documentation/diagrams/role-workflow.mmd" target="_blank" rel="noopener">role-workflow.mmd</a> · <a class="diagram-link" href="assets/diagrams/role-workflow.svg" target="_blank" rel="noopener">Open full-size SVG</a></figcaption>
+          </figure>
+          <div class="grid grid-3">
+            <div class="card"><h3>Requests are not grants</h3><p>Submission creates a workflow record; it does not change the role by itself.</p></div>
+            <div class="card"><h3>Admin context matters</h3><p>Approval is a security decision with a reason, an actor, and a resulting audit event.</p></div>
+            <div class="card"><h3>Denial is evidence too</h3><p>Rejected transitions and reviewer comments remain part of the record.</p></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Operations and risk</span>
+          <h2>What runs, what can fail, and what remains.</h2>
+          <p>The final group connects the local topology to its threats and recovery path. This is where the project states its limits most directly.</p>
+        </div>
+
+        <article class="diagram-entry" id="threat-model">
+          <div class="diagram-entry-head">
+            <span class="kicker">12 · Threats</span>
+            <h2>Trust boundaries and named residual risk</h2>
+            <p>The threat model separates untrusted users, the application boundary, and the database boundary. Credential reuse, role overreach, aggregate inference, downflow, shared database credentials, and backup exposure each map to a mitigation or an explicit residual risk. The diagram is a review aid; the full register belongs in the threat-model guide.</p>
+          </div>
+          <figure>
+            <div class="diagram-frame">
+              <img src="assets/diagrams/threat-model.svg" alt="Threat-model diagram with actors, application and database trust boundaries, six named threats, mitigations, and residual risks." loading="lazy" decoding="async">
+            </div>
+            <figcaption class="diagram-caption">Rendered from <a class="diagram-link" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/documentation/diagrams/threat-model.mmd" target="_blank" rel="noopener">threat-model.mmd</a> · <a class="diagram-link" href="assets/diagrams/threat-model.svg" target="_blank" rel="noopener">Open full-size SVG</a></figcaption>
+          </figure>
+          <div class="grid grid-3">
+            <div class="card"><h3>Shared SA is a boundary failure</h3><p>SQL Server roles cannot provide per-user isolation while every request uses one privileged login.</p></div>
+            <div class="card"><h3>Demo credentials are public</h3><p>Classroom reproducibility intentionally conflicts with credential secrecy; rotate before any real deployment.</p></div>
+            <div class="card"><h3>Backups are sensitive</h3><p>The SQL backup contains security objects and demo data; treat it as a protected artefact.</p></div>
+          </div>
+        </article>
+
+        <article class="diagram-entry" id="deployment">
+          <div class="diagram-entry-head">
+            <span class="kicker">13 · Runtime</span>
+            <h2>The local deployment topology</h2>
+            <p>The Tkinter client and the read-only Flask viewer connect to SQL Server in Docker. DBeaver is optional for inspection, and the static documentation site is published separately through GitHub Pages. Default endpoints stay on loopback; the published website contains no application data.</p>
+          </div>
+          <figure>
+            <div class="diagram-frame">
+              <img src="assets/diagrams/deployment.svg" alt="Deployment diagram showing the reviewer workstation, Tkinter client, Flask viewer, DBeaver, Docker SQL Server 2022, browser, and GitHub Pages." loading="lazy" decoding="async">
+            </div>
+            <figcaption class="diagram-caption">Rendered from <a class="diagram-link" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/documentation/diagrams/deployment.mmd" target="_blank" rel="noopener">deployment.mmd</a> · <a class="diagram-link" href="assets/diagrams/deployment.svg" target="_blank" rel="noopener">Open full-size SVG</a></figcaption>
+          </figure>
+          <div class="grid grid-3">
+            <div class="card"><h3>Loopback by default</h3><p>SQL Server and the Flask viewer are intended for local review, not public exposure.</p></div>
+            <div class="card"><h3>The viewer is read-only</h3><p>It is an inspection aid, separate from the desktop role dashboards and their checks.</p></div>
+            <div class="card"><h3>Pages is static</h3><p>The website explains the system; it does not execute the Tkinter application or query the database.</p></div>
+          </div>
+        </article>
+
+        <article class="diagram-entry" id="backup-restore">
+          <div class="diagram-entry-head">
+            <span class="kicker">14 · Recovery</span>
+            <h2>Backup and restore, with cautions attached</h2>
+            <p>The repository ships a SQL Server backup and a SQLite fallback. A local restore copies the backup into the container, discovers logical file names, restores with <code>REPLACE</code> and explicit <code>MOVE</code> clauses, then verifies schema objects and demo rows. The backup contains published classroom credentials and security objects, so it must never be treated as anonymous sample data.</p>
+          </div>
+          <figure>
+            <div class="diagram-frame">
+              <img src="assets/diagrams/backup-restore.svg" alt="Backup and restore diagram from SQL Server database and SQL scripts through Docker copy, file-list inspection, RESTORE with REPLACE and MOVE, verification, and audit logging." loading="lazy" decoding="async">
+            </div>
+            <figcaption class="diagram-caption">Rendered from <a class="diagram-link" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/documentation/diagrams/backup-restore.mmd" target="_blank" rel="noopener">backup-restore.mmd</a> · <a class="diagram-link" href="assets/diagrams/backup-restore.svg" target="_blank" rel="noopener">Open full-size SVG</a></figcaption>
+          </figure>
+          <div class="grid grid-3">
+            <div class="card"><h3>REPLACE is destructive</h3><p>Confirm the target database before restoring; the option overwrites it rather than merging.</p></div>
+            <div class="card"><h3>Verify after restore</h3><p>Check tables, views, roles, procedures, and expected demo inventory instead of assuming success.</p></div>
+            <div class="card"><h3>Record the operation</h3><p>Capture restore time, operator, source checksum, and result for operational evidence.</p></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel">
+          <span class="kicker">Use the diagrams with the source</span>
+          <h2>Every visual claim has a code path and a limit.</h2>
+          <p>Open the editable Mermaid sources, compare them with the security models guide, then run the documented test matrix against the implementation.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/tree/main/documentation/diagrams" target="_blank" rel="noopener">Browse Mermaid sources
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="button button-ghost" href="testing.html">Read the test matrix
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="SRMS home">
+            <img src="assets/brand/logo.svg" alt="" width="38" height="38">
+            <span class="brand-copy">Secure Student Records <small>Management Control</small></span>
+          </a>
+          <p>A database-security reference implementation for academic records. Designed for inspection, demonstration, and honest discussion of residual risk.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Explore</h3>
+          <a href="architecture.html">Architecture</a>
+          <a href="security.html">Security models</a>
+          <a href="database.html">Database</a>
+          <a href="testing.html">Test matrix</a>
+        </div>
+        <div class="footer-col">
+          <h3>Documentation</h3>
+          <a href="docs.html">Guide index</a>
+          <a href="diagrams.html">Diagram gallery</a>
+          <a href="setup.html">Installation</a>
+          <a href="assets/report/d_ds.pdf">Original report</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h3>Project</h3>
+          <a href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control" target="_blank" rel="noopener">Source code</a>
+          <a href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/releases" target="_blank" rel="noopener">Releases</a>
+          <a href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 license</a>
+          <a href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/SECURITY.md" target="_blank" rel="noopener">Security policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Ahmed Abo Bakr · AGPL-3.0</span>
+        <span>Course project. Public demo data. Not production-ready.</span>
+        <a class="to-top" href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+flowchart TD
+    Q["Aggregate query"] --> COUNT{"Result-set size"}
+    COUNT -- "0 records" --> ZERO["Allow<br/>no individual disclosure"]
+    COUNT -- "1 to 2 records" --> SMALL["Block<br/>below minimum size 3"]
+    COUNT -- "3 or more records" --> AGG{"MIN or MAX?"}
+    AGG -- No --> OK["Allow"]
+    AGG -- "Yes, 6 or more records" --> OK
+    AGG -- "Yes, fewer than 6" --> EXTREME["Block<br/>MIN/MAX threshold is 6"]
+
+    Q --> HISTORY{"Complementary query<br/>in user history?"}
+    HISTORY -- "Difference = 1" --> TRACK["Block<br/>high-risk tracker attack"]
+    HISTORY -- "Difference = 2" --> WARN["Warn<br/>suspicious pattern"]
+    HISTORY -- No --> CLEAR["No tracker finding"]

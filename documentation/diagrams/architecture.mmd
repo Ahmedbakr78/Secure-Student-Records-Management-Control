@@ -1,0 +1,58 @@
+flowchart TB
+    subgraph Presentation["Presentation layer"]
+        LOGIN["Login and guest entry"]
+        ADMIN["Admin dashboard"]
+        INSTRUCTOR["Instructor dashboard"]
+        TA["TA dashboard"]
+        STUDENT["Student dashboard"]
+        GUEST["Guest dashboard"]
+        VIEWER["Flask database viewer"]
+    end
+
+    subgraph Security["Application security kernel"]
+        AUTH["Authentication"]
+        RBAC["RBAC manager"]
+        MLS["MLS manager"]
+        INFER["Inference controller"]
+        FLOW["Flow controller"]
+        CRYPTO["Encryption manager"]
+        AUDIT["Audit writer"]
+        SESSION["Session and 2FA simulation"]
+    end
+
+    subgraph Data["Data access"]
+        MODELS["Secure domain models"]
+        FACTORY["Connection factory"]
+        SWITCH["Backend switcher"]
+        SEED["Seed data"]
+    end
+
+    subgraph Storage["Storage"]
+        SQL["SQL Server 2022<br/>tables, views, procedures, roles"]
+        SQLITE["SQLite development fallback"]
+        BACKUP["SRMS_SecureDB.bak"]
+    end
+
+    LOGIN --> AUTH
+    ADMIN --> RBAC
+    INSTRUCTOR --> RBAC
+    TA --> RBAC
+    STUDENT --> RBAC
+    GUEST --> RBAC
+    VIEWER --> FACTORY
+
+    AUTH --> AUDIT
+    AUTH --> SESSION
+    RBAC --> MLS
+    MLS --> INFER
+    INFER --> FLOW
+    FLOW --> CRYPTO
+    CRYPTO --> MODELS
+    AUDIT --> MODELS
+
+    MODELS --> FACTORY
+    FACTORY --> SWITCH
+    SWITCH --> SQL
+    SWITCH --> SQLITE
+    SEED --> SQLITE
+    BACKUP -. restore alternative .-> SQL

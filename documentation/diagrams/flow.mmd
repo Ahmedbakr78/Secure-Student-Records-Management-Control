@@ -1,0 +1,20 @@
+flowchart LR
+    PUB["0 Public"] --> UNCL["1 Unclassified"]
+    UNCL --> CONF["2 Confidential"]
+    CONF --> SEC["3 Secret"]
+    SEC --> TS["4 Top Secret"]
+
+    TS -- "downflow blocked" --> SEC
+    SEC -- "downflow blocked" --> CONF
+    CONF -- "downflow blocked" --> UNCL
+    UNCL -- "downflow blocked" --> PUB
+
+    PUB -- "upflow allowed" --> TS
+    CONF -- "same level allowed" --> CONF
+
+    subgraph Actions["Action policy"]
+        EXPORT["Export<br/>blocked at Confidential+"]
+        PRINT["Print, copy, paste, save<br/>blocked at Secret+"]
+        SHOT["Screenshot<br/>blocked at Top Secret"]
+        VIEW["View<br/>allowed"]
+    end

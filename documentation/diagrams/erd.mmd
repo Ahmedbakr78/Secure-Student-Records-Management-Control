@@ -1,0 +1,151 @@
+erDiagram
+    USERS ||--o{ ROLE_REQUESTS : submits
+    USERS ||--o{ COURSE_ASSIGNMENT : receives
+    USERS ||--o| STUDENT : links
+    USERS ||--o| INSTRUCTOR : links
+    INSTRUCTOR ||--o{ COURSE : teaches
+    STUDENT ||--o{ GRADES : earns
+    STUDENT ||--o{ ATTENDANCE : has
+    STUDENT ||--o{ COURSE_ENROLLMENT : enrolls
+    COURSE ||--o{ GRADES : contains
+    COURSE ||--o{ ATTENDANCE : contains
+    COURSE ||--o{ COURSE_ENROLLMENT : includes
+    COURSE ||--o{ COURSE_ASSIGNMENT : assigns
+    USERS ||--o{ AUDIT_LOG : acts
+
+    USERS {
+        int UserID PK
+        nvarchar Username UK
+        varbinary PasswordHash
+        varbinary PasswordSalt
+        nvarchar Role
+        int ClearanceLevel
+        int LinkedID
+        nvarchar LinkedType
+        bit IsActive
+        bit IsLocked
+        int FailedLoginAttempts
+        datetime LastLoginDate
+    }
+
+    STUDENT {
+        int StudentID PK
+        varbinary StudentID_Encrypted
+        nvarchar FullName
+        nvarchar Email UK
+        varbinary Phone
+        date DOB
+        nvarchar Department
+        date EnrollmentDate
+        nvarchar Status
+        int ClearanceLevel
+        int ClassificationLevel
+    }
+
+    INSTRUCTOR {
+        int InstructorID PK
+        nvarchar FullName
+        nvarchar Email UK
+        varbinary Phone
+        nvarchar Department
+        nvarchar Title
+        int ClearanceLevel
+        int ClassificationLevel
+    }
+
+    COURSE {
+        int CourseID PK
+        nvarchar CourseCode UK
+        nvarchar CourseName
+        nvarchar Description
+        nvarchar PublicInfo
+        int Credits
+        nvarchar Department
+        nvarchar Semester
+        int Year
+        int MaxCapacity
+        int InstructorID FK
+        int ClassificationLevel
+        bit IsActive
+    }
+
+    GRADES {
+        int GradeID PK
+        int StudentID FK
+        int CourseID FK
+        varbinary GradeValue
+        decimal GradeValue_Display
+        nvarchar GradeLetter
+        nvarchar Semester
+        datetime DateEntered
+        int EnteredBy FK
+        bit IsPublished
+        bit IsFinal
+        int ClassificationLevel
+    }
+
+    ATTENDANCE {
+        int AttendanceID PK
+        int StudentID FK
+        int CourseID FK
+        date AttendanceDate
+        bit Status
+        nvarchar Remarks
+        int RecordedBy
+        int ClassificationLevel
+    }
+
+    ROLE_REQUESTS {
+        int RequestID PK
+        int UserID FK
+        nvarchar Username
+        nvarchar CurrentRole
+        nvarchar RequestedRole
+        int CurrentClearance
+        int RequestedClearance
+        nvarchar Reason
+        nvarchar Status
+        datetime DateSubmitted
+        datetime DateProcessed
+        int ProcessedBy FK
+        nvarchar AdminComments
+    }
+
+    AUDIT_LOG {
+        int LogID PK
+        nvarchar ActionType
+        nvarchar TableName
+        int RecordID
+        int UserID
+        nvarchar Username
+        nvarchar UserRole
+        int UserClearance
+        int DataClassification
+        bit AccessGranted
+        nvarchar Description
+        nvarchar OldValues
+        nvarchar NewValues
+        nvarchar IPAddress
+        datetime ActionDate
+    }
+
+    COURSE_ENROLLMENT {
+        int EnrollmentID PK
+        int StudentID FK
+        int CourseID FK
+        date EnrollmentDate
+        nvarchar Status
+        nvarchar Semester
+        int Year
+    }
+
+    COURSE_ASSIGNMENT {
+        int AssignmentID PK
+        int CourseID FK
+        int UserID FK
+        nvarchar AssignmentType
+        nvarchar Semester
+        int Year
+        bit IsActive
+        datetime AssignedDate
+    }

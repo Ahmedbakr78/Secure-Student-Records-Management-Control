@@ -1,0 +1,18 @@
+flowchart TB
+    TS["4 · Top Secret<br/>USERS, AUDIT_LOG"]
+    SEC["3 · Secret<br/>GRADES, ATTENDANCE"]
+    CONF["2 · Confidential<br/>STUDENT, INSTRUCTOR"]
+    UNCL["1 · Unclassified<br/>COURSE"]
+    PUB["0 · Public<br/>COURSE.PublicInfo"]
+
+    TS --- SEC --- CONF --- UNCL --- PUB
+
+    READ["Read down<br/>clearance >= classification<br/>allowed"]
+    READUP["Read up<br/>clearance < classification<br/>No Read Up: blocked"]
+    WRITE["Write up<br/>clearance <= classification<br/>allowed"]
+    WRITEDOWN["Write down<br/>clearance > classification<br/>No Write Down: blocked"]
+
+    TS -.-> READ
+    PUB -.-> WRITE
+    PUB -.-> READUP
+    TS -.-> WRITEDOWN

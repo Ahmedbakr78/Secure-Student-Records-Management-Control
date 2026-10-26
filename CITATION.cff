@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use or reference this project, please cite it using this metadata."
+title: "Secure Student Records Management Control (SRMS)"
+abstract: >-
+  An educational database-security application that manages academic records
+  while enforcing role-based access control, multilevel security based on the
+  Bell-LaPadula model, inference control, flow control, and encryption. The
+  project combines a Python/Tkinter desktop client, a SQL Server database with
+  secure views and stored procedures, a Flask database inspector, and a complete
+  security test matrix.
+type: software
+authors:
+  - family-names: "Abo Bakr"
+    given-names: "Ahmed"
+    alias: "Ahmedbakr78"
+    website: "https://github.com/Ahmedbakr78"
+repository-code: "https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control"
+url: "https://ahmedbakr78.github.io/Secure-Student-Records-Management-Control/"
+license: AGPL-3.0
+version: "1.0.0"
+date-released: "2026-10-27"
+keywords:
+  - database-security
+  - role-based-access-control
+  - multilevel-security
+  - bell-lapadula
+  - inference-control
+  - flow-control
+  - encryption
+  - sql-server
+  - python
+  - tkinter
+  - academic-records

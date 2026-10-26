@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ · Secure Student Records Management Control</title>
+  <meta name="description" content="Straight answers about scope, demo credentials, production readiness, the TA attendance conflict, dual backends, encryption, audit, and testing.">
+  <meta name="theme-color" content="#061014">
+  <meta name="color-scheme" content="dark light">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FAQ · Secure Student Records Management Control">
+  <meta property="og:description" content="Straight answers about scope, demo credentials, production readiness, the TA attendance conflict, dual backends, encryption, audit, and testing.">
+  <meta property="og:url" content="https://ahmedbakr78.github.io/Secure-Student-Records-Management-Control/faq.html">
+  <meta property="og:image" content="https://ahmedbakr78.github.io/Secure-Student-Records-Management-Control/assets/og-image.png">
+  <meta property="og:site_name" content="SRMS">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FAQ · Secure Student Records Management Control">
+  <meta name="twitter:description" content="Straight answers about scope, demo credentials, production readiness, the TA attendance conflict, dual backends, encryption, audit, and testing.">
+  <meta name="twitter:image" content="https://ahmedbakr78.github.io/Secure-Student-Records-Management-Control/assets/og-image.png">
+  <link rel="canonical" href="https://ahmedbakr78.github.io/Secure-Student-Records-Management-Control/faq.html">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="application-name" content="SRMS">
+  <link rel="stylesheet" href="styles.css">
+  <script>try{var t=localStorage.getItem("srms-theme");if(t==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="SRMS home">
+        <img src="assets/brand/logo.svg" alt="" width="38" height="38">
+        <span class="brand-copy">Secure Student Records <small>Management Control</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav-links" id="site-navigation" aria-label="Primary" data-nav-links>
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="security.html">Security</a>
+        <a href="database.html">Database</a>
+        <a href="setup.html">Setup</a>
+        <a href="testing.html">Testing</a>
+        <a href="docs.html">Docs</a>
+        <a href="faq.html" aria-current="page">FAQ</a>
+        <div class="nav-actions">
+          <button class="icon-button" type="button" aria-label="Switch to light theme" data-theme-toggle>
+            <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 15.4A8.5 8.5 0 0 1 8.6 4a8.5 8.5 0 1 0 11.4 11.4Z"/></svg>
+            <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          </button>
+          <a class="button button-small button-ghost" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.3.8-.6v-2.2c-3.1.7-3.8-1.3-3.8-1.3-.5-1.3-1.3-1.6-1.3-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.3.9.1-.7.4-1.2.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.2.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.1 1.2a10.8 10.8 0 0 1 5.6 0c2.2-1.5 3.1-1.2 3.1-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.6 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span class="breadcrumb-sep">/</span><span>FAQ</span>
+        </nav>
+        <span class="kicker">Straight answers</span>
+        <h1>What SRMS is — and what it is not.</h1>
+        <p>Short answers to the questions a reviewer, instructor, or future contributor is most likely to ask.</p>
+        <div class="page-meta">
+          <span class="badge badge-mint">Course project</span>
+          <span class="badge">Not production-ready</span>
+          <span class="badge">Residual risk documented</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow">
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Is this safe to use for real student records?</summary>
+            <p><strong>No.</strong> SRMS is an educational reference implementation. It ships public demo credentials, an <code>SA</code> application path, hard-coded connection settings, simulated second factors, a mutable audit table, and no automated security regression suite. Use it only with disposable demo data.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why publish usernames and passwords?</summary>
+            <p>The published accounts let a reviewer reproduce every role boundary immediately: Admin, Instructor, TA, Student, and Guest. They are deliberately demo-only. They must never be reused outside a local classroom environment and must never protect real records.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does SRMS really enforce all five security models everywhere?</summary>
+            <p>No — and the project does not claim that. The models have named implementations and database mirrors, but some GUI paths call models directly, the Python matrix and SQL Server roles can drift, and enforcement is most consistent where data crosses from a dashboard into a model. The limitations are stated in the <a href="security.html">security models</a> page and the threat model.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How can a TA edit attendance if attendance is Secret and the TA is Confidential?</summary>
+            <p>This is a known policy conflict. The TA has a global clearance of 2 (Confidential), while attendance is classified 3 (Secret). Assignment-scoped views and RBAC express the delegated attendance duty, but a pure Bell–LaPadula no-read-up check would deny it. The project documents the tension instead of silently elevating the TA. A future policy must either raise the clearance, lower the classification, or introduce a formal delegated-access rule.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Should I use SQL Server or SQLite?</summary>
+            <p>SQL Server is the canonical security path: database roles, secure views, fourteen procedures, and a certificate-backed AES-256 hierarchy. SQLite is a development and UI-review fallback with no stored procedures, database roles, secure views, or SQL Server encryption hierarchy. Application-level checks still run, but the security properties are not equivalent.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why are there two encryption schemes?</summary>
+            <p>The SQL Server path demonstrates a database master key, certificate, and AES-256 symmetric key. The application path demonstrates Fernet authenticated encryption with a PBKDF2-derived key. They do not share a key lifecycle. Password hashing also differs: bcrypt on the model/SQLite path and SHA-256 + salt on the SQL Server path. These are documented limitations, not a unified production key-management design.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is the Flask viewer part of the security boundary?</summary>
+            <p>No. It is a read-only, localhost-only database inspector with allow-listed tables. It has no application authentication of its own. Do not expose port 5000 or treat the viewer as a secure application surface.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does the audit log make the system tamper-evident?</summary>
+            <p>No. <code>AUDIT_LOG</code> records authentication, access, writes, and workflow events, and the admin dashboard exposes them. But it is a normal table. An administrator with direct database access can alter it. It is a detective control, not an append-only or cryptographically tamper-evident store.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How does the role-upgrade workflow work?</summary>
+            <p>A user submits a request for TA or Instructor with a reason. The request is stored as Pending. An admin reviews it, then approves or denies it with comments. Approval updates the role and clearance and writes an audit event. Duplicate or invalid requests are rejected. The full sequence is in <a href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/documentation/16-role-workflow.md" target="_blank" rel="noopener">guide 16</a>.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Are there automated tests?</summary>
+            <p>Not for the security controls. There is a substantial manual matrix and a verification script that checks imports, connectivity, schema presence, managers, authentication, and role-request support. Automated unit, integration, and UI tests are roadmap items. A static documentation build can validate links, HTML, YAML, and assets without running the app.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why is the documentation website static?</summary>
+            <p>It needs no runtime, database, or build service, which makes review simple and hosting durable. The trade-off is that content must be kept in sync manually with the Markdown guides and source code.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why was the project renamed?</summary>
+            <p>The former repository name was long and described the original coursework framing. The new name, <strong>Secure Student Records Management Control</strong>, keeps the established short name <strong>SRMS</strong> while presenting the project as a current reference implementation. The original remote repository was left untouched.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What is the demo dataset?</summary>
+            <p>The two seeds are different. The SQL Server sample has 8 users, 4 instructors, 8 students, 5 courses, 10 grades, and 15 attendance records. The SQLite database has 11 users, 2 instructors, 5 students, 3 courses, 12 grades, and 50 attendance records. Counts are backend-specific and should not be combined.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Where should I start?</summary>
+            <p>For the architecture, read the <a href="architecture.html">system map</a>. For the controls, read <a href="security.html">security models</a>. To run it, follow <a href="setup.html">setup</a>. To evaluate it, use the <a href="testing.html">test matrix</a> and the <a href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/documentation/13-threat-model.md" target="_blank" rel="noopener">threat model</a>.</p>
+          </details>
+        </div>
+
+        <div class="cta-panel" style="margin-top:2.5rem">
+          <span class="kicker">Still reviewing?</span>
+          <h2>Follow the evidence.</h2>
+          <p>The complete library includes the threat model, module map, glossary, deployment constraints, and the full test matrix.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="docs.html">Browse the guides
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="button button-ghost" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/issues" target="_blank" rel="noopener">Ask a question
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="SRMS home">
+            <img src="assets/brand/logo.svg" alt="" width="38" height="38">
+            <span class="brand-copy">Secure Student Records <small>Management Control</small></span>
+          </a>
+          <p>A database-security reference implementation for academic records. Designed for inspection, demonstration, and honest discussion of residual risk.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Explore</h3>
+          <a href="architecture.html">Architecture</a>
+          <a href="security.html">Security models</a>
+          <a href="database.html">Database</a>
+          <a href="testing.html">Test matrix</a>
+        </div>
+        <div class="footer-col">
+          <h3>Documentation</h3>
+          <a href="docs.html">Guide index</a>
+          <a href="diagrams.html">Diagram gallery</a>
+          <a href="setup.html">Installation</a>
+          <a href="assets/report/d_ds.pdf">Original report</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h3>Project</h3>
+          <a href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control" target="_blank" rel="noopener">Source code</a>
+          <a href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/releases" target="_blank" rel="noopener">Releases</a>
+          <a href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 license</a>
+          <a href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/SECURITY.md" target="_blank" rel="noopener">Security policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Ahmed Abo Bakr · AGPL-3.0</span>
+        <span>Course project. Public demo data. Not production-ready.</span>
+        <a class="to-top" href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

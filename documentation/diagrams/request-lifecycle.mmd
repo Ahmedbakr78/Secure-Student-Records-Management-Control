@@ -1,0 +1,31 @@
+sequenceDiagram
+    autonumber
+    actor User
+    participant UI as Tkinter dashboard
+    participant Auth as Authentication
+    participant RBAC as RBAC manager
+    participant MLS as MLS manager
+    participant Infer as Inference controller
+    participant Flow as Flow controller
+    participant DB as Database
+    participant Audit as AUDIT_LOG
+
+    User->>UI: Sign in
+    UI->>Auth: authenticate
+    Auth->>DB: read user, hash, salt, state
+    Auth->>Audit: LOGIN_SUCCESS or LOGIN_FAILED
+    Auth-->>UI: role, clearance, linked record
+
+    User->>UI: Request protected data
+    UI->>RBAC: permission check
+    RBAC-->>UI: allow or deny
+    UI->>MLS: clearance check
+    MLS-->>UI: NRU or NWD decision
+    UI->>Infer: validate aggregate shape
+    Infer-->>UI: size and tracker decision
+    UI->>Flow: action and direction check
+    Flow-->>UI: allowed or blocked
+    UI->>DB: parameterised read
+    DB-->>UI: authorised rows
+    UI->>Audit: access outcome
+    UI-->>User: projection or denial reason

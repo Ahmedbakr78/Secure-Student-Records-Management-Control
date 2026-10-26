@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security models · Secure Student Records Management Control</title>
+  <meta name="description" content="A policy-to-code map of RBAC, Bell–LaPadula multilevel security, inference control, flow control, encryption, audit, and the documented residual risks.">
+  <meta name="theme-color" content="#061014">
+  <meta name="color-scheme" content="dark light">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Security models · Secure Student Records Management Control">
+  <meta property="og:description" content="A policy-to-code map of RBAC, Bell–LaPadula multilevel security, inference control, flow control, encryption, audit, and the documented residual risks.">
+  <meta property="og:url" content="https://ahmedbakr78.github.io/Secure-Student-Records-Management-Control/security.html">
+  <meta property="og:image" content="https://ahmedbakr78.github.io/Secure-Student-Records-Management-Control/assets/og-image.png">
+  <meta property="og:site_name" content="SRMS">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Security models · Secure Student Records Management Control">
+  <meta name="twitter:description" content="A policy-to-code map of RBAC, Bell–LaPadula multilevel security, inference control, flow control, encryption, audit, and the documented residual risks.">
+  <meta name="twitter:image" content="https://ahmedbakr78.github.io/Secure-Student-Records-Management-Control/assets/og-image.png">
+  <link rel="canonical" href="https://ahmedbakr78.github.io/Secure-Student-Records-Management-Control/security.html">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="application-name" content="SRMS">
+  <link rel="stylesheet" href="styles.css">
+  <script>try{var t=localStorage.getItem("srms-theme");if(t==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="SRMS home">
+        <img src="assets/brand/logo.svg" alt="" width="38" height="38">
+        <span class="brand-copy">Secure Student Records <small>Management Control</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav-links" id="site-navigation" aria-label="Primary" data-nav-links>
+        <a href="index.html">Overview</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="security.html" aria-current="page">Security</a>
+        <a href="database.html">Database</a>
+        <a href="setup.html">Setup</a>
+        <a href="testing.html">Testing</a>
+        <a href="docs.html">Docs</a>
+        <a href="faq.html">FAQ</a>
+        <div class="nav-actions">
+          <button class="icon-button" type="button" aria-label="Switch to light theme" data-theme-toggle>
+            <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 15.4A8.5 8.5 0 0 1 8.6 4a8.5 8.5 0 1 0 11.4 11.4Z"/></svg>
+            <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          </button>
+          <a class="button button-small button-ghost" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.3.8-.6v-2.2c-3.1.7-3.8-1.3-3.8-1.3-.5-1.3-1.3-1.6-1.3-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.3.9.1-.7.4-1.2.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.2.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.1 1.2a10.8 10.8 0 0 1 5.6 0c2.2-1.5 3.1-1.2 3.1-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.6 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span class="breadcrumb-sep">/</span><span>Security</span>
+        </nav>
+        <span class="kicker">Policy and enforcement</span>
+        <h1>Five controls that answer different questions.</h1>
+        <p>Authorization is not one check. SRMS separates role permission, clearance, aggregate inference, data movement, and encryption — then records the outcome. This page maps each model to its code path and its limits.</p>
+        <div class="page-meta">
+          <span class="badge badge-mint">RBAC</span>
+          <span class="badge badge-mint">Bell–LaPadula</span>
+          <span class="badge badge-amber">Inference control</span>
+          <span class="badge">Flow control</span>
+          <span class="badge">Encryption</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-3">
+          <article class="card card-accent reveal">
+            <span class="card-number">01 · AUTHORIZATION</span>
+            <h3>Who may do what?</h3>
+            <p>A deny-by-default matrix maps five roles to tables and operations, then adds row ownership and assignment checks.</p>
+            <span class="badge badge-mint">RBAC</span>
+          </article>
+          <article class="card card-accent reveal">
+            <span class="card-number">02 · CONFIDENTIALITY</span>
+            <h3>In which direction?</h3>
+            <p>No Read Up for reads and No Write Down for writes across five ordered classification levels.</p>
+            <span class="badge badge-mint">MLS</span>
+          </article>
+          <article class="card card-accent reveal">
+            <span class="card-number">03 · AGGREGATES</span>
+            <h3>Does the set expose one?</h3>
+            <p>Minimum query-set sizes, stricter MIN/MAX thresholds, and tracker history constrain statistical disclosure.</p>
+            <span class="badge badge-amber">Inference</span>
+          </article>
+          <article class="card card-accent reveal">
+            <span class="card-number">04 · MOVEMENT</span>
+            <h3>Where may it go?</h3>
+            <p>Downflow is blocked, and export, print, copy, save, and screenshot actions follow an explicit action policy.</p>
+            <span class="badge">Flow</span>
+          </article>
+          <article class="card card-accent reveal">
+            <span class="card-number">05 · AT REST</span>
+            <h3>Who can read it raw?</h3>
+            <p>AES-256 in SQL Server, Fernet in the application layer, and salted password hashes in both paths.</p>
+            <span class="badge">Crypto</span>
+          </article>
+          <article class="card card-accent reveal">
+            <span class="card-number">CROSS-CUTTING</span>
+            <h3>Who can reconstruct it?</h3>
+            <p>Authentication, access decisions, writes, and role-request decisions produce audit events.</p>
+            <span class="badge">Audit</span>
+          </article>
+        </div>
+        <div class="callout callout-warning">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
+          <p><strong>These are real code paths, not production guarantees.</strong>The demo uses public credentials and an <code>SA</code> database connection. The SQL Server roles and secure views do not provide a complete isolation boundary until each application user has a distinct database principal. Read the <a href="docs.html">threat model</a> before drawing production conclusions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Model 01 · RBAC</span>
+          <h2>Deny by default, then scope the row.</h2>
+          <p>The application matrix is the security intent. Assignment, ownership, and publication filters in models and views make the intent operational.</p>
+        </div>
+        <div class="table-wrap reveal">
+          <table class="matrix">
+            <thead>
+              <tr><th>Table</th><th>Admin</th><th>Instructor</th><th>TA</th><th>Student</th><th>Guest</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="table-code">STUDENT</td><td>CRUD</td><td>R</td><td>R assigned</td><td>R own</td><td class="table-deny">—</td></tr>
+              <tr><td class="table-code">INSTRUCTOR</td><td>CRUD</td><td>R / U own</td><td class="table-deny">—</td><td class="table-deny">—</td><td class="table-deny">—</td></tr>
+              <tr><td class="table-code">COURSE</td><td>CRUD</td><td>R</td><td>R</td><td>R</td><td>R public</td></tr>
+              <tr><td class="table-code">GRADES</td><td>CRUD</td><td>R / I / U assigned</td><td class="table-deny">—</td><td>R own published</td><td class="table-deny">—</td></tr>
+              <tr><td class="table-code">ATTENDANCE</td><td>CRUD</td><td>R assigned</td><td>R / I / U assigned</td><td>R own</td><td class="table-deny">—</td></tr>
+              <tr><td class="table-code">USERS</td><td>CRUD</td><td class="table-deny">—</td><td class="table-deny">—</td><td class="table-deny">—</td><td class="table-deny">—</td></tr>
+              <tr><td class="table-code">ROLE_REQUESTS</td><td>CRUD</td><td>R / I own</td><td>R / I own</td><td>R / I own</td><td class="table-deny">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid grid-3" style="margin-top:1rem">
+          <div class="card"><h3>Application matrix</h3><p><code>config.py</code> and <code>RBACManager</code> return structured decisions with a reason, not just a boolean.</p></div>
+          <div class="card"><h3>SQL Server mirror</h3><p>Five <code>db_*</code> roles grant the intended surface and explicitly deny TA grade access.</p></div>
+          <div class="card"><h3>Known drift risk</h3><p>The Python matrix and SQL roles are separate definitions. Both must be reviewed when policy changes.</p></div>
+        </div>
+        <figure style="margin-top:1.5rem">
+          <div class="diagram-frame">
+            <img src="assets/diagrams/rbac.svg" alt="RBAC decision diagram connecting roles, permissions, table access, and denial outcomes.">
+          </div>
+          <figcaption class="diagram-caption">RBAC decision path · <a class="diagram-link" href="assets/diagrams/rbac.svg" target="_blank" rel="noopener">Open full-size SVG <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg></a></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Model 02 · MLS</span>
+          <h2>Clearance controls the direction of information.</h2>
+          <p>Bell–LaPadula separates reading from writing. A subject may not read above their clearance and may not write below the classification of the data they hold.</p>
+        </div>
+        <div class="split">
+          <div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Level</th><th>Classification</th><th>Example objects</th></tr></thead>
+                <tbody>
+                  <tr><td class="table-code">4</td><td>Top Secret</td><td>Users, audit log</td></tr>
+                  <tr><td class="table-code">3</td><td>Secret</td><td>Grades, attendance, role requests</td></tr>
+                  <tr><td class="table-code">2</td><td>Confidential</td><td>Student and instructor profiles</td></tr>
+                  <tr><td class="table-code">1</td><td>Unclassified</td><td>Course code, title, credits</td></tr>
+                  <tr><td class="table-code">0</td><td>Public</td><td>Public course projection</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="feature-inline">
+              <span>Admin L4</span><span>Instructor L3</span><span>TA L2</span><span>Student L1</span><span>Guest L0</span>
+            </div>
+          </div>
+          <div>
+            <div class="code-shell">
+              <div class="code-head"><span>bell-lapadula.rules</span></div>
+              <pre><code>Simple security property
+read allowed  ⇔  clearance ≥ classification
+
+Star property
+write allowed ⇔  clearance ≤ classification
+
+Admin is a trusted principal
+write exception is explicit, not implicit</code></pre>
+            </div>
+            <div class="code-shell">
+              <div class="code-head"><span>src/security/mls.py</span></div>
+              <pre><code><span class="prompt">&gt;&gt;&gt;</span> mls.check_access("Student", "GRADES", "read")
+{ "allowed": False,
+  "reason": "NRU Violation: clearance 1 &lt; classification 3" }</code></pre>
+            </div>
+          </div>
+        </div>
+        <figure style="margin-top:1.5rem">
+          <div class="diagram-frame">
+            <img src="assets/diagrams/mls.svg" alt="Bell-LaPadula multilevel security diagram showing clearances, classifications, read-up denial, and write-down policy.">
+          </div>
+          <figcaption class="diagram-caption">Bell–LaPadula policy lattice · <a class="diagram-link" href="assets/diagrams/mls.svg" target="_blank" rel="noopener">Open full-size SVG <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg></a></figcaption>
+        </figure>
+        <div class="grid grid-2" style="margin-top:1rem">
+          <div class="callout" style="margin:0">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+            <p><strong>The own-profile exception is explicit.</strong>A Student cannot read the Confidential <code>STUDENT</code> table generally. A dedicated view exposes only the linked student's authorised fields.</p>
+          </div>
+          <div class="callout callout-warning" style="margin:0">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
+            <p><strong>TA attendance is a documented conflict.</strong>Attendance is Secret; TA clearance is Confidential. Assignment-filtered views express the delegated duty, but a pure NRU check would deny it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Model 03 · Inference</span>
+          <h2>Small sets and narrow differences leak people.</h2>
+          <p>An aggregate can reveal an individual when the population is tiny, when MIN/MAX exposes an extreme, or when two queries differ by one record.</p>
+        </div>
+        <div class="grid grid-3">
+          <div class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div>
+            <h3>Query-set floor</h3>
+            <p>Aggregates over fewer than three records are blocked. Zero rows remain allowed because they disclose no individual.</p>
+            <span class="badge badge-mint">min 3 rows</span>
+          </div>
+          <div class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5M4 19h16"/><path d="M7 15h3V9H7v6ZM14 15h3V4h-3v11Z"/></svg></div>
+            <h3>Stricter extremes</h3>
+            <p>MIN and MAX require at least six records because an extreme is nearly a row-level disclosure.</p>
+            <span class="badge badge-amber">min 6 rows</span>
+          </div>
+          <div class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M8 11h6M11 8v6"/></svg></div>
+            <h3>Tracker history</h3>
+            <p>Fifty recent result-set signatures per user are compared. A symmetric difference of one is a high-risk tracker pattern.</p>
+            <span class="badge">process-local</span>
+          </div>
+        </div>
+        <div class="split" style="margin-top:1.5rem">
+          <div class="code-shell">
+            <div class="code-head"><span>src/security/inference_control.py</span></div>
+            <pre><code><span class="prompt">&gt;&gt;&gt;</span> inference.validate_aggregate_query(
+...     "AVG", result_count=2, user_role="TA")
+{ "allowed": False,
+  "reason": "Result set size 2 is below minimum 3" }
+
+<span class="prompt">&gt;&gt;&gt;</span> inference.track_query(
+...     user_id=7, query_hash="grades:cs101",
+...     result_set={1, 2, 3})
+<span class="prompt">&gt;&gt;&gt;</span> inference.check_tracker_attack(
+...     user_id=7, new_result_set={1, 2})
+{ "attack_detected": True, "risk_level": "high" }</code></pre>
+          </div>
+          <div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Result</th><th>Decision</th></tr></thead>
+                <tbody>
+                  <tr><td>0 rows</td><td class="table-allow">Allow</td></tr>
+                  <tr><td>1–2 rows</td><td class="table-deny">Block</td></tr>
+                  <tr><td>≥ 3 rows, ordinary aggregate</td><td class="table-allow">Allow</td></tr>
+                  <tr><td>&lt; 6 rows, MIN/MAX</td><td class="table-deny">Block</td></tr>
+                  <tr><td>Difference from history = 1</td><td class="table-deny">High-risk block</td></tr>
+                  <tr><td>Difference from history = 2</td><td>Medium-risk warning</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="margin-top:0.8rem;font-size:0.82rem;color:var(--muted)">Tracker history is a heuristic and resets with the process. It does not prove intent.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Model 04 · Flow</span>
+          <h2>Upward is allowed. Downward is not.</h2>
+          <p>Flow control covers both direction and action. A view may be allowed where an export is not, and a Secret clipboard context locks after use.</p>
+        </div>
+        <div class="table-wrap reveal">
+          <table>
+            <thead>
+              <tr><th>Action</th><th>Public</th><th>Unclassified</th><th>Confidential</th><th>Secret</th><th>Top Secret</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>View</td><td class="table-allow">Allow</td><td class="table-allow">Allow</td><td class="table-allow">Allow</td><td class="table-allow">Allow</td><td class="table-allow">Allow</td></tr>
+              <tr><td>Export</td><td class="table-allow">Allow</td><td class="table-allow">Allow</td><td class="table-deny">Block</td><td class="table-deny">Block</td><td class="table-deny">Block</td></tr>
+              <tr><td>Print</td><td class="table-allow">Allow</td><td class="table-allow">Allow</td><td class="table-allow">Allow</td><td class="table-deny">Block</td><td class="table-deny">Block</td></tr>
+              <tr><td>Copy / paste</td><td class="table-allow">Allow</td><td class="table-allow">Allow</td><td class="table-allow">Allow</td><td class="table-deny">Block</td><td class="table-deny">Block</td></tr>
+              <tr><td>Save</td><td class="table-allow">Allow</td><td class="table-allow">Allow</td><td class="table-allow">Allow</td><td class="table-deny">Block</td><td class="table-deny">Block</td></tr>
+              <tr><td>Screenshot</td><td class="table-allow">Allow</td><td class="table-allow">Allow</td><td class="table-allow">Allow</td><td class="table-allow">Allow</td><td class="table-deny">Block</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid grid-2" style="margin-top:1rem">
+          <div class="callout" style="margin:0">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+            <p><strong>Upflow is allowed.</strong>Public data can be incorporated into a Secret context. The reverse is a down-classification violation.</p>
+          </div>
+          <div class="callout callout-warning" style="margin:0">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
+            <p><strong>Clipboard lock is cooperative.</strong>A screenshot block is a UI policy, not a desktop-level technical prevention.</p>
+          </div>
+        </div>
+        <figure style="margin-top:1.5rem">
+          <div class="diagram-frame">
+            <img src="assets/diagrams/flow.svg" alt="Flow control diagram showing permitted upward flows and blocked downward flows between classification levels.">
+          </div>
+          <figcaption class="diagram-caption">Flow-control matrix · <a class="diagram-link" href="assets/diagrams/flow.svg" target="_blank" rel="noopener">Open full-size SVG <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg></a></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Model 05 · Encryption</span>
+          <h2>Protect the value, not just the button.</h2>
+          <p>Sensitive columns are encrypted before persistence. Password storage uses a hash and per-user salt, never a reversible value.</p>
+        </div>
+        <div class="split">
+          <div>
+            <h3>Two key hierarchies</h3>
+            <p>SQL Server uses a database master key, certificate, and AES-256 symmetric key. The application layer uses Fernet authenticated encryption with a PBKDF2-derived key.</p>
+            <ul class="check-list">
+              <li>SQL Server: certificate-backed AES-256 for phone, identifier, and grade values.</li>
+              <li>Application: Fernet, with HMAC-SHA256 authentication and PBKDF2-HMAC-SHA256 derivation.</li>
+              <li>Passwords: bcrypt cost 12 on the model/SQLite path; SHA-256 + salt on the SQL Server path.</li>
+              <li>Reveal: plaintext only through an authorised application path.</li>
+            </ul>
+          </div>
+          <div class="code-shell">
+            <div class="code-head"><span>src/security/encryption.py</span></div>
+            <pre><code><span class="prompt">&gt;&gt;&gt;</span> crypto = get_encryption_manager()
+<span class="prompt">&gt;&gt;&gt;</span> ciphertext = crypto.encrypt("Sensitive value")
+<span class="prompt">&gt;&gt;&gt;</span> crypto.decrypt(ciphertext)
+"Sensitive value"
+
+<span class="prompt">&gt;&gt;&gt;</span> crypto.verify_password("wrong", stored_hash)
+False</code></pre>
+          </div>
+        </div>
+        <div class="callout callout-danger">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+          <p><strong>The published fallback key is for demonstration only.</strong>Set <code>SRMS_MASTER_KEY</code> for any local data you care about. The project does not implement key rotation or envelope encryption. Fernet is AES-128-CBC with HMAC-SHA256; the “AES-256” label belongs to the SQL Server symmetric key, not the Fernet primitive.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Residual risk</span>
+          <h2>What the models do not solve.</h2>
+          <p>Security review is more credible when the boundary is stated. These are the limitations a production design would have to address.</p>
+        </div>
+        <div class="grid grid-3">
+          <div class="card"><h3>Published secrets</h3><p>Demo accounts and the SQL Server <code>SA</code> password are intentionally public. They are not a credential-management design.</p></div>
+          <div class="card"><h3>Split policy definitions</h3><p>The Python matrix and SQL Server roles can drift. Application checks can be bypassed by a new path that calls a model directly.</p></div>
+          <div class="card"><h3>Audit is mutable</h3><p><code>AUDIT_LOG</code> is a normal table. It is detective evidence, not an append-only or tamper-evident store.</p></div>
+          <div class="card"><h3>Simulated factors</h3><p>Two-factor authentication and email are demonstrations. No real TOTP provisioning or delivery exists.</p></div>
+          <div class="card"><h3>Cooperative controls</h3><p>Clipboard locking and screenshot blocks rely on the UI. Other applications and desktop tools are outside the boundary.</p></div>
+          <div class="card"><h3>No automated regression suite</h3><p>The manual test matrix is detailed, but it is not a substitute for repeatable automated security tests.</p></div>
+        </div>
+        <div class="hero-actions">
+          <a class="button button-primary" href="testing.html">Test the controls
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="button button-ghost" href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/documentation/13-threat-model.md" target="_blank" rel="noopener">Threat model on GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="SRMS home">
+            <img src="assets/brand/logo.svg" alt="" width="38" height="38">
+            <span class="brand-copy">Secure Student Records <small>Management Control</small></span>
+          </a>
+          <p>A database-security reference implementation for academic records. Designed for inspection, demonstration, and honest discussion of residual risk.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Explore</h3>
+          <a href="architecture.html">Architecture</a>
+          <a href="security.html">Security models</a>
+          <a href="database.html">Database</a>
+          <a href="testing.html">Test matrix</a>
+        </div>
+        <div class="footer-col">
+          <h3>Documentation</h3>
+          <a href="docs.html">Guide index</a>
+          <a href="diagrams.html">Diagram gallery</a>
+          <a href="setup.html">Installation</a>
+          <a href="assets/report/d_ds.pdf">Original report</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h3>Project</h3>
+          <a href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control" target="_blank" rel="noopener">Source code</a>
+          <a href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/releases" target="_blank" rel="noopener">Releases</a>
+          <a href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 license</a>
+          <a href="https://github.com/Ahmedbakr78/Secure-Student-Records-Management-Control/blob/main/SECURITY.md" target="_blank" rel="noopener">Security policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Ahmed Abo Bakr · AGPL-3.0</span>
+        <span>Course project. Public demo data. Not production-ready.</span>
+        <a class="to-top" href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

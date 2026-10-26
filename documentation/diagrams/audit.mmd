@@ -1,0 +1,21 @@
+flowchart LR
+    ACTION["Protected action<br/>login, read, write, export, or role decision"] --> DECIDE{"Application decision"}
+    DECIDE -- Allow --> EXEC["Execute operation"]
+    DECIDE -- Deny --> REASON["Return structured denial reason"]
+    EXEC --> EVENT["Build audit event<br/>actor, role, action, target, result, timestamp"]
+    REASON --> EVENT
+    EVENT --> REDACT["Redact secrets<br/>and unnecessary personal data"]
+    REDACT --> WRITE["Append to AUDIT_LOG"]
+    WRITE --> REVIEW["Admin audit view<br/>filter and investigate"]
+    REVIEW --> EXPORT["Controlled export"]
+    WRITE -. "mutable table" .-> RISK["Residual risk:<br/>not append-only or tamper-evident"]
+    EXPORT -. "retention gap" .-> RISK
+
+    subgraph Evidence["What the event answers"]
+        WHO["Who acted?"]
+        WHAT["What was attempted?"]
+        WHERE["Which record or table?"]
+        RESULT["Allowed or denied, and why?"]
+    end
+
+    EVENT --> Evidence

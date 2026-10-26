@@ -1,0 +1,35 @@
+flowchart TB
+    subgraph Untrusted["Untrusted or semi-trusted zone"]
+        ACTORS["Student · Instructor · TA · Guest"]
+        BROWSER["Local browser viewer"]
+        OPERATOR["Demo operator"]
+    end
+
+    subgraph AppBoundary["Application trust boundary"]
+        UI["Tkinter dashboards"]
+        AUTH["Authentication and session"]
+        KERNEL["RBAC · MLS · inference · flow"]
+        CRYPTO["Application encryption"]
+    end
+
+    subgraph DataBoundary["Database trust boundary"]
+        SQL["SQL Server 2022"]
+        SQLITE["SQLite fallback"]
+        AUDIT["AUDIT_LOG"]
+        BACKUP["SRMS_SecureDB.bak"]
+    end
+
+    ACTORS --> UI
+    BROWSER --> SQLITE
+    OPERATOR --> BACKUP
+    UI --> AUTH --> KERNEL --> CRYPTO --> SQL
+    KERNEL --> AUDIT
+    SQLiteNote["SQLite path is a development fallback,<br/>not an equivalent isolation boundary."]
+    SQLITE -.-> SQLiteNote
+
+    T1["T1 · Credential reuse<br/>Mitigate: demo warning + lockout"] -.-> AUTH
+    T2["T2 · Role overreach<br/>Mitigate: deny-by-default + SQL DENY"] -.-> KERNEL
+    T3["T3 · Aggregate inference<br/>Mitigate: query-set and tracker rules"] -.-> KERNEL
+    T4["T4 · Downward data flow<br/>Mitigate: action policy + audit"] -.-> KERNEL
+    T5["T5 · Shared SA connection<br/>Residual: per-user principals not implemented"] -.-> SQL
+    T6["T6 · Backup exposure<br/>Residual: local files and demo secrets"] -.-> BACKUP

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Secure Student Records Management Control mark</title>
+  <desc id="desc">A shield containing a database stack and a verification check.</desc>
+  <defs>
+    <linearGradient id="bg" x1="24" y1="16" x2="232" y2="240" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b2f27"/>
+      <stop offset=".55" stop-color="#0b1d25"/>
+      <stop offset="1" stop-color="#071318"/>
+    </linearGradient>
+    <linearGradient id="mint" x1="64" y1="54" x2="196" y2="210" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7bf1c8"/>
+      <stop offset="1" stop-color="#1fb98a"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="80" y1="70" x2="190" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffe09a"/>
+      <stop offset="1" stop-color="#eea817"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#bg)"/>
+  <path d="M128 27 213 61v66c0 48-31 82-85 105-54-23-85-57-85-105V61l85-34Z" fill="none" stroke="#1d4b40" stroke-width="2"/>
+  <path d="M128 42 199 70v57c0 41-26 69-71 89-45-20-71-48-71-89V70l71-28Z" fill="#0d3a30" fill-opacity=".55" stroke="url(#mint)" stroke-width="4"/>
+  <ellipse cx="128" cy="94" rx="42" ry="17" fill="none" stroke="url(#mint)" stroke-width="8"/>
+  <path d="M86 94v28c0 9 19 17 42 17s42-8 42-17V94" fill="none" stroke="url(#mint)" stroke-width="8"/>
+  <path d="M86 122v28c0 9 19 17 42 17s42-8 42-17v-28" fill="none" stroke="url(#mint)" stroke-width="8" opacity=".94"/>
+  <circle cx="174" cy="168" r="31" fill="#071318" stroke="url(#amber)" stroke-width="5" filter="url(#glow)"/>
+  <path d="m160 168 10 10 19-22" fill="none" stroke="url(#amber)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="128" cy="94" r="4" fill="#ffe09a"/>
+</svg>

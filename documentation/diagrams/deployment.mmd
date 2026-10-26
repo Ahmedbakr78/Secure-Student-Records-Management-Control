@@ -1,0 +1,19 @@
+flowchart LR
+    DEV["Reviewer workstation"]
+    subgraph Docker["Docker network"]
+        SQL["SQL Server 2022<br/>127.0.0.1:1433"]
+    end
+    GUI["Tkinter desktop client"]
+    FLASK["Flask viewer<br/>127.0.0.1:5000"]
+    DBEAVER["DBeaver optional"]
+    BROWSER["Browser"]
+    PAGES["GitHub Pages<br/>static docs"]
+
+    DEV --> GUI
+    DEV --> DBEAVER
+    DEV --> BROWSER
+    GUI -- "pymssql / TDS" --> SQL
+    FLASK -- "pymssql / TDS" --> SQL
+    DBEAVER -- "TDS" --> SQL
+    BROWSER --> FLASK
+    BROWSER --> PAGES

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ahmedbakr78.github.io/Secure-Student-Records-Management-Control/sitemap.xml

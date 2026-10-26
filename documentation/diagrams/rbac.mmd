@@ -1,0 +1,26 @@
+flowchart TD
+    REQ["Protected operation<br/>role, table, operation, owner"] --> DENY{"Explicit denial?"}
+    DENY -- Yes --> BLOCK["Deny with reason"]
+    DENY -- No --> DIRECT{"Operation granted<br/>directly?"}
+    DIRECT -- Yes --> ALLOW["Allow"]
+    DIRECT -- No --> OWN{"Operation granted<br/>for own row?"}
+    OWN -- Yes --> MATCH{"user_id equals<br/>target_id?"}
+    MATCH -- Yes --> ALLOW
+    MATCH -- No --> BLOCK
+    OWN -- No --> PUBLIC{"Public projection?"}
+    PUBLIC -- Yes --> ALLOW
+    PUBLIC -- No --> BLOCK
+
+    subgraph Roles["Five roles"]
+        ADMIN["Admin · clearance 4"]
+        INST["Instructor · clearance 3"]
+        TA["TA · clearance 2"]
+        STUD["Student · clearance 1"]
+        GUEST["Guest · clearance 0"]
+    end
+
+    ADMIN --> REQ
+    INST --> REQ
+    TA --> REQ
+    STUD --> REQ
+    GUEST --> REQ

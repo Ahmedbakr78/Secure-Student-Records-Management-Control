@@ -1,0 +1,29 @@
+flowchart LR
+    subgraph Source["Source and artefacts"]
+        DB["SRMS_SecureDB<br/>SQL Server database"]
+        BAK["SRMS_SecureDB.bak"]
+        SQL_TREE["sql/*.sql schema, roles, views, procedures, seeds"]
+        LITE["database/srms.db<br/>SQLite fallback"]
+    end
+
+    subgraph Restore["Local recovery path"]
+        DOCKER["SQL Server 2022 container"]
+        COPY["docker cp backup into container"]
+        FILES["RESTORE FILELISTONLY<br/>discover logical files"]
+        RESTORE["RESTORE DATABASE ... WITH REPLACE<br/>MOVE data and log files"]
+        CHECK["Verify schema, views, roles,<br/>procedure count, and demo rows"]
+    end
+
+    subgraph Caution["Operational cautions"]
+        OVERWRITE["REPLACE overwrites the target database"]
+        SECRET["Backup contains demo security objects<br/>and published classroom credentials"]
+        LOG["Record restore time, operator,<br/>source checksum, and result"]
+    end
+
+    BAK --> COPY --> DOCKER --> FILES --> RESTORE --> CHECK
+    SQL_TREE --> DOCKER
+    DB --> BAK
+    LITE --> CHECK
+    OVERWRITE -.-> RESTORE
+    SECRET -.-> BAK
+    CHECK --> LOG

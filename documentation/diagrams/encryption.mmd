@@ -1,0 +1,33 @@
+flowchart TB
+    subgraph SQL["SQL Server hierarchy"]
+        MK["Database master key"]
+        CERT["SRMS_Certificate"]
+        KEY["SRMS_SymmetricKey<br/>AES-256"]
+        MK --> CERT --> KEY
+    end
+
+    subgraph Fields["Encrypted fields"]
+        SID["STUDENT.StudentID_Encrypted"]
+        PHONE["STUDENT.Phone"]
+        IPHONE["INSTRUCTOR.Phone"]
+        GRADE["GRADES.GradeValue"]
+        PWD["USERS.PasswordHash and Salt"]
+    end
+
+    KEY --> SID
+    KEY --> PHONE
+    KEY --> IPHONE
+    KEY --> GRADE
+
+    subgraph App["Application layer"]
+        PBKDF["PBKDF2-HMAC-SHA256<br/>100,000 iterations"]
+        FERNET["Fernet authenticated encryption"]
+        BCRYPT["bcrypt cost 12<br/>SQLite/model password path"]
+        SHA["SHA-256 with per-user salt<br/>SQL Server password path"]
+        PBKDF --> FERNET
+    end
+
+    FERNET --> SID
+    FERNET --> PHONE
+    BCRYPT --> PWD
+    SHA --> PWD

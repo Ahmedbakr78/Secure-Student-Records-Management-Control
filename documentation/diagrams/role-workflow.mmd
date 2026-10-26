@@ -1,0 +1,33 @@
+sequenceDiagram
+    autonumber
+    actor Requester
+    participant UI as Student or TA dashboard
+    participant Model as RoleRequestModel
+    participant Requests as ROLE_REQUESTS
+    actor Admin
+    participant AdminUI as Admin dashboard
+    participant Users as USERS
+    participant Audit as AUDIT_LOG
+
+    Requester->>UI: Open Role Request
+    UI->>Model: submit request with reason
+    Model->>Model: validate transition and reason
+    Model->>Requests: INSERT status Pending
+    Requests-->>Requester: Request ID and Pending state
+
+    Admin->>AdminUI: Open Role Requests
+    AdminUI->>Requests: SELECT pending
+    Requests-->>AdminUI: Reason and clearance context
+
+    alt Approved
+        Admin->>AdminUI: Approve with comments
+        AdminUI->>Users: UPDATE role and clearance
+        AdminUI->>Requests: status Approved, processed metadata
+    else Denied
+        Admin->>AdminUI: Deny with comments
+        AdminUI->>Requests: status Denied, processed metadata
+    end
+
+    AdminUI->>Audit: ROLE_REQUEST_PROCESSED
+    Requester->>UI: Refresh status
+    UI-->>Requester: Decision and admin comments

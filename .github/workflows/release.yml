@@ -1,0 +1,37 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    name: Publish release assets
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build SQL bundle and checksums
+        shell: bash
+        run: |
+          version="${GITHUB_REF_NAME:-v1.0.0}"
+          mkdir -p dist
+          zip -r "dist/srms-sql-server-${version}.zip" sql documentation/04-database-reference.md
+          sha256sum SRMS_SecureDB.bak database/srms.db d_ds.pdf "dist/srms-sql-server-${version}.zip" > dist/SHA256SUMS.txt
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          body_path: CHANGELOG.md
+          files: |
+            dist/srms-sql-server-*.zip
+            dist/SHA256SUMS.txt
+            SRMS_SecureDB.bak
+            database/srms.db
+            d_ds.pdf

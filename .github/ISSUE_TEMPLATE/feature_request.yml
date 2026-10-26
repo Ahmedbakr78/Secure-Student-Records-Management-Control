@@ -1,0 +1,63 @@
+name: Feature request
+description: Propose a scoped improvement to the application, documentation, tests, or website.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Preflight
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: This request uses demo data and does not depend on real student records.
+          required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or review gap
+      description: What is missing, unclear, or unsafe today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Keep the change scoped and explain the affected layer.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Security policy
+        - Database schema or procedures
+        - Desktop client
+        - Documentation
+        - Website or diagrams
+        - Testing
+        - CI or release engineering
+    validations:
+      required: true
+  - type: textarea
+    id: security
+    attributes:
+      label: Security impact
+      description: Which role, clearance, inference, flow, encryption, or audit boundary could change?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      options:
+        - label: I am willing to open a pull request for this change.
+          required: false

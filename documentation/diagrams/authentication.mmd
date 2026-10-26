@@ -1,0 +1,33 @@
+sequenceDiagram
+    autonumber
+    actor User
+    participant Login as Login view
+    participant Auth as Authentication service
+    participant Store as USERS table
+    participant Factor as Session and 2FA simulation
+    participant Audit as AUDIT_LOG
+    participant Router as Role router
+
+    User->>Login: Submit username and password
+    Login->>Auth: authenticate(username, password)
+    Auth->>Store: Load account, hash, salt, lock state
+    Store-->>Auth: Account record or no result
+    alt Unknown, inactive, or locked account
+        Auth->>Audit: LOGIN_FAILED with safe context
+        Auth-->>Login: Generic denial
+    else Active account
+        Auth->>Auth: Verify salted password hash
+        alt Password mismatch
+            Auth->>Store: Increment failed attempt count
+            Auth->>Audit: LOGIN_FAILED and lockout transition
+            Auth-->>Login: Generic denial
+        else Password verified
+            Auth->>Factor: Create session and optional 2FA challenge
+            Factor-->>Auth: Session state and timeout
+            Auth->>Audit: LOGIN_SUCCESS
+            Auth->>Router: Resolve role, clearance, and linked record
+            Router-->>Login: Least-privilege dashboard
+            Login-->>User: Authorised workspace
+        end
+    end
+    Note over Auth,Audit: Limits: public demo credentials, simulated 2FA, and a shared DB principal remain documented residual risks.

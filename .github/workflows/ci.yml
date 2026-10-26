@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  static-validation:
+    name: Static validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install validation dependencies
+        run: python -m pip install --disable-pip-version-check PyYAML==6.0.2 beautifulsoup4==4.12.3
+
+      - name: Validate repository, links, HTML, YAML, SVG, and assets
+        run: python .github/scripts/check_static.py
+
+      - name: Compile Python sources without executing them
+        run: python -m compileall -q config.py launch.py run.py db_viewer.py web_viewer.py verify_project.py src
+
+      - name: Validate the web app manifest
+        run: python -m json.tool docs/site.webmanifest > /dev/null

@@ -1,0 +1,85 @@
+name: Bug report
+description: Report a reproducible defect without including real student data or secrets.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve SRMS. This project handles demo records only.
+        **Do not paste real student data, credentials, connection strings, or encryption keys into an issue.**
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Preflight
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: I am reporting demo-only data and have removed secrets from this report.
+          required: true
+  - type: dropdown
+    id: backend
+    attributes:
+      label: Backend
+      description: Which database path was active?
+      options:
+        - SQL Server 2022
+        - SQLite fallback
+        - Not applicable
+        - Unsure
+    validations:
+      required: true
+  - type: input
+    id: commit
+    attributes:
+      label: Commit or version
+      placeholder: v1.0.0 or a commit SHA
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, Python version, Tkinter availability, Docker or SQL Server version.
+      placeholder: Ubuntu 24.04 · Python 3.12 · Docker 27 · SQL Server 2022
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Use the demo accounts and disposable data only.
+      placeholder: |
+        1. Sign in as ...
+        2. Open ...
+        3. Perform ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: Include the complete error text if safe, but never include secrets.
+    validations:
+      required: true
+  - type: textarea
+    id: security
+    attributes:
+      label: Security relevance
+      description: Does this affect a role boundary, classification check, encryption path, audit event, or absence of a denial?
+    validations:
+      required: false
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Logs, screenshots, or audit rows using demo data only. Remove personal data and secrets.
+    validations:
+      required: false
