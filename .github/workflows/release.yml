@@ -15,7 +15,7 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Build SQL bundle and checksums
         shell: bash
@@ -26,7 +26,7 @@ jobs:
           sha256sum SRMS_SecureDB.bak database/srms.db d_ds.pdf "dist/srms-sql-server-${version}.zip" > dist/SHA256SUMS.txt
 
       - name: Create GitHub release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           body_path: CHANGELOG.md
           files: |
